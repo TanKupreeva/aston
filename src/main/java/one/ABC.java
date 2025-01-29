@@ -2,7 +2,8 @@ package one;
 
 public class ABC {
     public static void main(String[] args) {
-        System.out.printf("Hello! Tanya!");
-        System.out.printf("How are you today?");
+        System.out.println("Hello! Tanya!");
+        System.out.println("How are you today?");
+        System.out.println("");
     }
 }
