@@ -12,6 +12,10 @@ public class Book extends Prog {
         book = bookBuilder.book;
         page = bookBuilder.page;
     }
+
+    public Book(){
+        this.fillTheArray = new FillClassBook();
+    }
     public String getAuthor() {
         return author;
     }

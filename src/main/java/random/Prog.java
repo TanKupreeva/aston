@@ -8,12 +8,13 @@ public class Prog {
         this.fillTheArray = fillTheArray;
     }
 
-    public void fillByRandom() {
+    public void fillByRandom(String path) {
         this.fillTheArray.fillByRandom(path);
     }
 
-    public void fillByFile() {
+    public void fillByFile(String path) {
         this.fillTheArray.fillByFile(path);
+
     }
 
     public void fillByManually() {

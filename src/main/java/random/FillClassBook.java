@@ -6,25 +6,39 @@ import static random.Util.readFile;
 
 public class FillClassBook implements FillTheArray {
     @Override
-    public void fillByFile(String path) {
-
-    }
-
-    @Override
-    public void fillByRandom(String path) {
+    public Book[] fillByFile(String path) {
         String sb = readFile(path);
         String[] word = sb.split("\\;|\\n");
 
         Book[] books = new Book[word.length / 3];
         for (int i = 0, j = 0; i < word.length; i++, j++) {
-            Book book = new Book.BookBuilder(word[i].trim(),word[++i].trim(),Integer.parseInt(word[++i].trim())).build();
+            Book book = new Book.BookBuilder(word[i].trim(), word[++i].trim(), Integer.parseInt(word[++i].trim())).build();
 //            book.setAuthor(word[i].trim());
 //            book.setBook(word[++i].trim());
 //            book.setPage(Integer.parseInt(word[++i].trim()));
             books[j] = book;
             System.out.println(j + " " + books[j]);
         }
+        return books;
+    }
 
+    @Override
+    public void fillByRandom(String path) {
+//        String sb = readFile(path);
+//        String[] word = sb.split("\\;|\\n");
+//
+//        Book[] books = new Book[word.length / 3];
+//        for (int i = 0, j = 0; i < word.length; i++, j++) {
+//            Book book = new Book.BookBuilder(word[i].trim(),word[++i].trim(),Integer.parseInt(word[++i].trim())).build();
+////            book.setAuthor(word[i].trim());
+////            book.setBook(word[++i].trim());
+////            book.setPage(Integer.parseInt(word[++i].trim()));
+//            books[j] = book;
+//            System.out.println(j + " " + books[j]);
+//        }
+
+        FillClassBook fillClassBook = new FillClassBook();
+        Book[] books = fillClassBook.fillByFile(path);
         System.out.println("Введите количество необходимых объектов");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

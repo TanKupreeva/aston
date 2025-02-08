@@ -1,9 +1,12 @@
 package random;
 
 
+import static random.Util.readFile;
+
 public class Main {
     public static void main(String[] args) {
-        FillClassBook fillClassBook = new FillClassBook();
-        fillClassBook.fillByRandom("/Users/tatyanakupreeva/Documents/io_tests/books.txt");
+
+        Book book = new Book();
+        book.fillByRandom("/Users/tatyanakupreeva/Documents/io_tests/books.txt");
     }
 }
