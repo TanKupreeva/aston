@@ -1,5 +1,6 @@
 package org.example.entity;
 
+// rename branch
 class Book {
     private final String author;
     private final String title;
