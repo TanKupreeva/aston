@@ -8,8 +8,11 @@ public class Prog {
         this.fillTheArray = fillTheArray;
     }
 
-    public void fillByRandom(String path) {
-        this.fillTheArray.fillByRandom(path);
+    public void fillByRandomVersion1(String path) {
+        this.fillTheArray.fillByRandomVersion1(path);
+    }
+    public void fillByRandomVersion2() {
+        this.fillTheArray.fillByRandomVersion2();
     }
 
     public void fillByFile(String path) {

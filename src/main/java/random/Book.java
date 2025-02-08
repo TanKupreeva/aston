@@ -7,15 +7,16 @@ public class Book extends Prog {
     private String book;
     private int page;
 
-    private Book (BookBuilder bookBuilder) {
+    private Book(BookBuilder bookBuilder) {
         author = bookBuilder.author;
         book = bookBuilder.book;
         page = bookBuilder.page;
     }
 
-    public Book(){
+    public Book() {
         this.fillTheArray = new FillClassBook();
     }
+
     public String getAuthor() {
         return author;
     }
@@ -33,11 +34,13 @@ public class Book extends Prog {
         private String author;
         private String book;
         private int page;
+
         public BookBuilder(String author, String book, int page) {
             this.author = author;
             this.book = book;
             this.page = page;
         }
+
         public Book build() {
             return new Book(this);
         }
