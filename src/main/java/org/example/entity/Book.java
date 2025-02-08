@@ -1,3 +1,5 @@
+package org.example.entity;
+
 class Book {
     private final String author;
     private final String title;

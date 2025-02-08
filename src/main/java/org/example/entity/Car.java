@@ -1,3 +1,5 @@
+package org.example.entity;
+
 class Car {
     private final int power;
     private final String model;

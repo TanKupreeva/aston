@@ -1,3 +1,5 @@
+package org.example.entity;
+
 class RootVegetable {
     private final String type;
     private final double weight;
