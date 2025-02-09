@@ -1,8 +1,8 @@
-package random;
+package org.example.random;
 
 import java.util.Scanner;
 
-import static random.Util.readFile;
+import static org.example.random.Util.readFile;
 
 public class FillClassBook implements FillTheArray {
     @Override

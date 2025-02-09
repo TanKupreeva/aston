@@ -1,4 +1,4 @@
-package random;
+package org.example.random;
 
 public interface FillTheArray {
     Object[]  fillByFile(String path);

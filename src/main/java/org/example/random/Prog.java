@@ -1,4 +1,4 @@
-package random;
+package org.example.random;
 
 public class Prog {
     FillTheArray fillTheArray;
@@ -15,8 +15,8 @@ public class Prog {
         this.fillTheArray.fillByRandomVersion2();
     }
 
-    public void fillByFile(String path) {
-        this.fillTheArray.fillByFile(path);
+    public Object[] fillByFile(String path) {
+      return   this.fillTheArray.fillByFile(path);
 
     }
 

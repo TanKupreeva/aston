@@ -1,4 +1,4 @@
-package random;
+package org.example.random;
 
 import java.io.*;
 
@@ -8,7 +8,6 @@ public class Util {
     }
 
     public static int genRandom(int minBound, int maxBound) {
-        //TODO :
         int v = maxBound - minBound + 1;
         int x = (int) (Math.random() * v) + minBound;
         return x < 0 ? x * (-1) : x;
