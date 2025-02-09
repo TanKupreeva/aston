@@ -26,17 +26,17 @@ public class RootVegetable {
         private double weight;
         private String color;
 
-        public RootVegetableBuilder setType(String type) {
+        public RootVegetableBuilder type(String type) {
             this.type = type;
             return this;
         }
 
-        public RootVegetableBuilder setWeight(double weight) {
+        public RootVegetableBuilder weight(double weight) {
             this.weight = weight;
             return this;
         }
 
-        public RootVegetableBuilder setColor(String color) {
+        public RootVegetableBuilder color(String color) {
             this.color = color;
             return this;
         }

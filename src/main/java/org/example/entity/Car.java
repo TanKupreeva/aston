@@ -11,32 +11,26 @@ public class Car {
         this.year = carBuilder.year;
     }
 
-    public int getPower() {
-        return power;
-    }
-    public String getModel() {
-        return model;
-    }
-    public int getYear() {
-        return year;
-    }
+    public int getPower() { return power; }
+    public String getModel() { return model; }
+    public int getYear() { return year; }
 
     public static class CarBuilder {
         private int power;
         private String model;
         private int year;
 
-        public CarBuilder setPower(int power) {
+        public CarBuilder power(int power) {
             this.power = power;
             return this;
         }
 
-        public CarBuilder setModel(String model) {
+        public CarBuilder model(String model) {
             this.model = model;
             return this;
         }
 
-        public CarBuilder setYear(int year) {
+        public CarBuilder year(int year) {
             this.year = year;
             return this;
         }

@@ -26,17 +26,17 @@ public class Book {
         private String title;
         private int page;
 
-        public BookBuilder setAuthor(String author) {
+        public BookBuilder author(String author) {
             this.author = author;
             return this;
         }
 
-        public BookBuilder setTitle(String title) {
+        public BookBuilder title(String title) {
             this.title = title;
             return this;
         }
 
-        public BookBuilder setPage(int page) {
+        public BookBuilder page(int page) {
             this.page = page;
             return this;
         }
