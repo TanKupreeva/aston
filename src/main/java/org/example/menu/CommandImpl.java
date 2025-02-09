@@ -11,7 +11,7 @@ public abstract class CommandImpl implements Command{
 
     public final BufferedReader bufferedReader;
 
-    public  final Map<Integer, Command> mapCommands = new HashMap<>();
+    public final Map<Integer, Command> mapCommands = new HashMap<>();
 
     public CommandImpl(final BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;

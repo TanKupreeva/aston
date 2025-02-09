@@ -1,10 +1,11 @@
 package org.example.menu;
 
 import java.io.BufferedReader;
+import java.util.List;
 
-public class FindHandler extends CommandImpl {
+public class FindCollection extends CommandImpl implements BeforeCommand {
 
-    public FindHandler(BufferedReader bufferedReader) {
+    public FindCollection(BufferedReader bufferedReader) {
         super(bufferedReader);
         mapCommands.put(1, () -> {
             System.out.println("\nAuto");
@@ -23,11 +24,15 @@ public class FindHandler extends CommandImpl {
 
     @Override
      public void showMenu() {
-        System.out.print("Please select the class of which object you want to find:\n" +
+        System.out.print("Please select the class you want to find:\n" +
                 "1 - Auto\n" +
                 "2 - Book\n" +
                 "3 - RootVegetable\n" +
                 "4 - Exit finding\n");
     }
 
+    @Override
+    public void beforeExecute(List list) {
+
+    }
 }

@@ -2,7 +2,8 @@ package org.example;
 
 import org.example.menu.CommandImpl;
 import org.example.menu.FillCollection;
-import org.example.menu.FindHandler;
+import org.example.menu.FindCollection;
+import org.example.menu.SelectClass;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,10 +11,11 @@ import java.io.InputStreamReader;
 
 public class App extends CommandImpl
 {
+
     public App(BufferedReader bufferedReader) {
         super(bufferedReader);
-        mapCommands.put(1, new FillCollection(bufferedReader));
-        mapCommands.put(2, new FindHandler(bufferedReader));
+        mapCommands.put(1, new SelectClass(bufferedReader, new FillCollection(bufferedReader)));
+        mapCommands.put(2, new SelectClass(bufferedReader, new FindCollection(bufferedReader)));
         mapCommands.put(3, () -> {
             System.out.println("\nExit the program. Bye bye...");;
             isExecute = false;});
