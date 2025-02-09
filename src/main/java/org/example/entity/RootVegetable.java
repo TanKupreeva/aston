@@ -1,6 +1,6 @@
 package org.example.entity;
 
-class RootVegetable {
+public class RootVegetable {
     private final String type;
     private final double weight;
     private final String color;

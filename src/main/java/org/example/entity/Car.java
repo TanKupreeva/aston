@@ -1,6 +1,6 @@
 package org.example.entity;
 
-class Car {
+public class Car {
     private final int power;
     private final String model;
     private final int year;

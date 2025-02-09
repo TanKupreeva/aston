@@ -1,15 +1,14 @@
 package org.example.entity;
 
-// rename branch
-class Book {
+public class Book {
     private final String author;
     private final String title;
-    private final int page_count;
+    private final int page;
 
     private Book(BookBuilder bookBuilder) {
         this.author = bookBuilder.author;
         this.title = bookBuilder.title;
-        this.page_count = bookBuilder.page_count;
+        this.page = bookBuilder.page;
     }
 
     public String getAuthor() {
@@ -19,13 +18,13 @@ class Book {
         return title;
     }
     public int getPage_count() {
-        return page_count;
+        return page;
     }
 
     public static class BookBuilder {
         private String author;
         private String title;
-        private int page_count;
+        private int page;
 
         public BookBuilder setAuthor(String author) {
             this.author = author;
@@ -37,8 +36,8 @@ class Book {
             return this;
         }
 
-        public BookBuilder setYear(int year) {
-            this.page_count = page_count;
+        public BookBuilder setPage(int page) {
+            this.page = page;
             return this;
         }
 
