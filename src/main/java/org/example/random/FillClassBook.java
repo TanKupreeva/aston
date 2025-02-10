@@ -28,20 +28,41 @@ public class FillClassBook implements FillTheArray {
         String[] authorArr = {"Иванов", "Петров", "Сидоров", "Павлов", "Александров", "Смирнов", "Попов", "Васильев", "Волков"};
         String[] bookArr = {"Сказки", "Повести", "Рассказы", "Поэмы", "Стихи", "Новеллы", "Романы"};
 
-        System.out.println("Введите количество необходимых объектов");
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println("Введите начальное значение количества страниц");
-        int a = sc.nextInt();
-        System.out.println("Введите конечное значение количества страниц");
-        int b = sc.nextInt();
-        Book[] books = new Book[n];
-        for (int i = 0; i < n; i++) {
-            Book book = new Book.BookBuilder(authorArr[Util.genRandom(bookArr.length - 1)], bookArr[Util.genRandom(bookArr.length - 1)], Util.genRandom(a, b)).build();
-            books[i] = book;
-            System.out.println(books[i]);
+
+        while (true) {
+            System.out.println("Введите количество необходимых объектов");
+
+            try {
+                int n = sc.nextInt();
+                System.out.println("Введите начальное значение количества страниц");
+                int a = sc.nextInt();
+                System.out.println("Введите конечное значение количества страниц");
+                int b = sc.nextInt();
+                Book[] books = new Book[n];
+                for (int i = 0; i < n; i++) {
+                    Book book = new Book.BookBuilder(authorArr[Util.genRandom(bookArr.length - 1)], bookArr[Util.genRandom(bookArr.length - 1)], Util.genRandom(a, b)).build();
+                    books[i] = book;
+                    System.out.println(books[i]);
+                }
+            } catch (Exception e) {
+                System.out.println("Неверный ввод");
+                sc.next();
+            }
+            char o;
+            do {
+                System.out.println("Желаете продолжить? y/n");
+                o = sc.next().charAt(0);
+            }
+            while (o != 'n' && o != 'y');
+
+            if (o == 'n') {
+                System.out.println("Goodbye");
+                break;
+            }
         }
     }
+
 
     @Override
     public void fillByRandomVersion1(String path) {

@@ -6,7 +6,7 @@ public class Main {
 
         Book book = new Book();
 //        book.fillByRandomVersion1("/Users/tatyanakupreeva/Documents/io_tests/books.txt");
-//        book.fillByRandomVersion2();
+        book.fillByRandomVersion2();
 
 //        Book[] books = (Book[]) book.fillByFile("/Users/tatyanakupreeva/Documents/io_tests/books.txt");
 //        String []authors= new String[books.length];
@@ -20,7 +20,7 @@ public class Main {
 //        RootVegetable rootVegetable = new RootVegetable();
 //        rootVegetable.fillByRandomVersion2();
 
-        Car car = new Car();
-        car.fillByRandomVersion2();
+//        Car car = new Car();
+//        car.fillByRandomVersion2();
     }
 }

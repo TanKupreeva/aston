@@ -1,6 +1,6 @@
 package org.example.random;
 
-public class Prog {
+public class Prog{
     FillTheArray fillTheArray;
     String path;
 
@@ -11,12 +11,13 @@ public class Prog {
     public void fillByRandomVersion1(String path) {
         this.fillTheArray.fillByRandomVersion1(path);
     }
+
     public void fillByRandomVersion2() {
         this.fillTheArray.fillByRandomVersion2();
     }
 
     public Object[] fillByFile(String path) {
-      return   this.fillTheArray.fillByFile(path);
+        return this.fillTheArray.fillByFile(path);
 
     }
 
