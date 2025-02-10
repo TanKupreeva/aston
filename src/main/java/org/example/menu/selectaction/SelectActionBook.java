@@ -15,7 +15,9 @@ public class SelectActionBook extends SelectAction<Book>{
 //        FindCollection<Book> finder = new FindCollectionBook(bufferedReader, list));
 //        super(bufferedReader, filler, finder);
 
-        super(bufferedReader, new FillCollectionBook(bufferedReader, list), new FindCollectionBook(bufferedReader, list));
+        super(bufferedReader, Book.class,
+                new FillCollectionBook(bufferedReader, list),
+                new FindCollectionBook(bufferedReader, list));
         this.list = list;
     }
 }

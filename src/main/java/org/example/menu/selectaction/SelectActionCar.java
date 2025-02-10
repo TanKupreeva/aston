@@ -15,6 +15,9 @@ public class SelectActionCar extends SelectAction<Car> {
 //        FindCollection<Car> finder = new FindCollectionCar(bufferedReader, list));
 //        super(bufferedReader, filler, finder);
 
-        super(bufferedReader, new FillCollectionCar(bufferedReader, list), new FindCollectionCar(bufferedReader, list));
-        this.list = list;    }
+        super(bufferedReader, Car.class,
+                new FillCollectionCar(bufferedReader, list),
+                new FindCollectionCar(bufferedReader, list));
+        this.list = list;
+    }
 }

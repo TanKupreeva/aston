@@ -15,7 +15,9 @@ public class SelectActionRootVegetable extends SelectAction<RootVegetable> {
 //        FindCollection<RootVegetable> finder = new FindCollectionRootVegetable(bufferedReader, list));
 //        super(bufferedReader, filler, finder);
 
-        super(bufferedReader, new FillRootVegetable(bufferedReader, list), new FindCollectionRootVegetable(bufferedReader, list));
+        super(bufferedReader, RootVegetable.class,
+                new FillRootVegetable(bufferedReader, list),
+                new FindCollectionRootVegetable(bufferedReader, list));
         this.list = list;
     }
 }
