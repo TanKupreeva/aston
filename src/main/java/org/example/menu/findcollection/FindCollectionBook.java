@@ -7,7 +7,8 @@ import java.util.List;
 
 public class FindCollectionBook extends FindCollection<Book> {
     public FindCollectionBook(BufferedReader bufferedReader, List<Book> list) {
-        super(bufferedReader, list);
+        super(bufferedReader,
+                Book.class, list);
 //        FromFileFiller<Car> fromFileFiller = new FromFileFillerCar(list);
 //        RandomFiller<Car> randomFiller = new RandomFillerCar(list);
 //        ManualFiller<Car> manualFiller = new ManualFillerCar(list);

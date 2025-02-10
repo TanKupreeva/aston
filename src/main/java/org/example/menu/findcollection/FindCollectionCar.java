@@ -7,6 +7,7 @@ import java.util.List;
 
 public class FindCollectionCar extends FindCollection<Car> {
     public FindCollectionCar(BufferedReader bufferedReader, List<Car> list) {
-        super(bufferedReader, list);
+        super(bufferedReader, Car.class,
+                list);
     }
 }

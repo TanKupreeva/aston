@@ -7,9 +7,10 @@ import java.util.List;
 
 public class FindCollection<T> extends CommandImpl {
 
-    public FindCollection(BufferedReader bufferedReader, List<T> list) {
+    public FindCollection(BufferedReader bufferedReader, Class<T> tClass,
+                          List<T> list) {
         super(bufferedReader);
-        builderMenu.append("Please, select the field by which you want to find the object:\n");
+        builderMenu.append("Please, select the field by which you want to find the object ").append(tClass.getSimpleName()).append(":\n");
         mapCommands.put(1,()-> {
 //            fromFileFiller.fill();
         });

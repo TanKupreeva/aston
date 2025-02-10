@@ -7,6 +7,7 @@ import java.util.List;
 
 public class FindCollectionRootVegetable extends FindCollection<RootVegetable> {
     public FindCollectionRootVegetable(BufferedReader bufferedReader, List<RootVegetable> list) {
-        super(bufferedReader, list);
+        super(bufferedReader, RootVegetable.class,
+                list);
     }
 }
