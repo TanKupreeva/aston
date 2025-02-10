@@ -26,7 +26,7 @@ public class SelectAction<T> extends CommandImpl {
         builderMenu.append(2).append(" - Find an element of a sorted collection.\n");
 
         mapCommands.put(3, () -> list.sort(comparator.getComparator()));
-        builderMenu.append(3).append(" - Sort collection items.\n");
+        builderMenu.append(3).append(" - Sort collection items by all filed.\n");
 
         mapCommands.put(4, () -> System.out.println(list));
         builderMenu.append(4).append(" - Display collection items.\n");
