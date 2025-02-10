@@ -1,6 +1,7 @@
 package org.example.menu.selectaction;
 
 import org.example.entity.Book;
+import org.example.entity.comparators.book.BookComparator;
 import org.example.menu.findcollection.FindCollection;
 import org.example.menu.fillcollection.FillCollectionBook;
 import org.example.menu.fillcollection.FillCollection;
@@ -17,7 +18,8 @@ public class SelectActionBook extends SelectAction<Book>{
 
         super(bufferedReader, Book.class,
                 new FillCollectionBook(bufferedReader, list),
-                new FindCollectionBook(bufferedReader, list));
+                new FindCollectionBook(bufferedReader, list),
+                new BookComparator());
         this.list = list;
     }
 }

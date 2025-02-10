@@ -1,6 +1,7 @@
 package org.example.menu.selectaction;
 
 import org.example.entity.Car;
+import org.example.entity.comparators.car.CarComparator;
 import org.example.menu.findcollection.FindCollection;
 import org.example.menu.fillcollection.FillCollectionCar;
 import org.example.menu.fillcollection.FillCollection;
@@ -17,7 +18,8 @@ public class SelectActionCar extends SelectAction<Car> {
 
         super(bufferedReader, Car.class,
                 new FillCollectionCar(bufferedReader, list),
-                new FindCollectionCar(bufferedReader, list));
+                new FindCollectionCar(bufferedReader, list),
+                new CarComparator());
         this.list = list;
     }
 }

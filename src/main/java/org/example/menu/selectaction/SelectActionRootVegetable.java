@@ -1,6 +1,7 @@
 package org.example.menu.selectaction;
 
 import org.example.entity.RootVegetable;
+import org.example.entity.comparators.rootvegetable.RootVegetableComparator;
 import org.example.menu.fillcollection.FillCollection;
 import org.example.menu.fillcollection.FillRootVegetable;
 import org.example.menu.findcollection.FindCollection;
@@ -17,7 +18,8 @@ public class SelectActionRootVegetable extends SelectAction<RootVegetable> {
 
         super(bufferedReader, RootVegetable.class,
                 new FillRootVegetable(bufferedReader, list),
-                new FindCollectionRootVegetable(bufferedReader, list));
+                new FindCollectionRootVegetable(bufferedReader, list),
+                new RootVegetableComparator());
         this.list = list;
     }
 }
