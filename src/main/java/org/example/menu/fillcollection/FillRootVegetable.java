@@ -18,6 +18,9 @@ public class FillRootVegetable extends FillCollection<RootVegetable> {
 //        ManualFiller<RootVegetable> manualFiller = new ManualFillerRootVegetable(list);
 //        super(bufferedReader, fromFileFiller, randomFiller, manualFiller);
 
-        super(bufferedReader, new FromFileFillerRootVegetable(bufferedReader, list), new RandomFillerRootVegetable(bufferedReader, list), new ManualFillerRootVegetable(bufferedReader, list));
+        super(bufferedReader, RootVegetable.class,
+                new FromFileFillerRootVegetable(bufferedReader, list),
+                new RandomFillerRootVegetable(bufferedReader, list),
+                new ManualFillerRootVegetable(bufferedReader, list));
     }
 }

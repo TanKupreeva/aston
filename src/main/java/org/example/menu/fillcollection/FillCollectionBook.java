@@ -18,6 +18,9 @@ public class FillCollectionBook extends FillCollection<Book> {
 //        ManualFiller<Book> manualFiller = new ManualFillerBook(list);
 //        super(bufferedReader, fromFileFiller, randomFiller, manualFiller);
 
-        super(bufferedReader, new FromFileFillerBook(bufferedReader, list), new RandomFillerBook(bufferedReader, list), new ManualFillerBook(bufferedReader, list));
+        super(bufferedReader, Book.class,
+                new FromFileFillerBook(bufferedReader, list),
+                new RandomFillerBook(bufferedReader, list),
+                new ManualFillerBook(bufferedReader, list));
     }
 }

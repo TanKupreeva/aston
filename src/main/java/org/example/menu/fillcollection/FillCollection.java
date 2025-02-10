@@ -9,9 +9,12 @@ import java.io.BufferedReader;
 
 public class FillCollection<T> extends CommandImpl {
 
-    public FillCollection(BufferedReader bufferedReader, FromFileFiller<T> fromFileFiller, RandomFiller<T> randomFiller, ManualFiller<T> manualFiller) {
+    public FillCollection(BufferedReader bufferedReader, Class<T> tClass,
+                          FromFileFiller<T> fromFileFiller,
+                          RandomFiller<T> randomFiller,
+                          ManualFiller<T> manualFiller) {
         super(bufferedReader);
-        builderMenu.append("Please select the fill type or exit:\n");
+        builderMenu.append("Please select the fill type for ").append(tClass.getSimpleName()).append(" or exit:\n");
         mapCommands.put(1,()-> {
             fromFileFiller.enterCapacity();
         });

@@ -18,6 +18,9 @@ public class FillCollectionCar extends FillCollection<Car> {
 //        ManualFiller<Car> manualFiller = new ManualFillerCar(list);
 //        super(bufferedReader, fromFileFiller, randomFiller, manualFiller);
 
-        super(bufferedReader, new FromFileFillerCar(bufferedReader, list), new RandomFillerCar(bufferedReader, list), new ManualFillerCar(bufferedReader, list));
+        super(bufferedReader, Car.class,
+                new FromFileFillerCar(bufferedReader, list),
+                new RandomFillerCar(bufferedReader, list),
+                new ManualFillerCar(bufferedReader, list));
     }
 }
