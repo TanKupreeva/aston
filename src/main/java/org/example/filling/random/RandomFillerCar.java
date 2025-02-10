@@ -11,5 +11,4 @@ public class RandomFillerCar extends RandomFiller<Car> {
         super(bufferedReader, list);
         listRandom = ReadFilesUtils.getCarsFromFile();
     }
-
 }
