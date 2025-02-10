@@ -4,23 +4,22 @@ import org.example.entity.Book;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 
-public class BookManualFillerStrategy extends ManualFillerStrategy<Book> {
+public class ManualFillerBook extends ManualFiller<Book> {
 
-    public BookManualFillerStrategy(List<Book> list) {
-        super(list);
+    public ManualFillerBook(BufferedReader bufferedReader, List<Book> list) {
+        super(bufferedReader, list);
     }
 
     @Override
-    protected Book getV() {
+    protected Book getValue() {
         String author = "";
         String title = "";
         int pages = 0;
         boolean is = true;
         while (is) {
-            try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));){
+            try {
                 System.out.println("Enter author:\n");
                 author = bufferedReader.readLine();
                 System.out.println("Enter title:\n");

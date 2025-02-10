@@ -5,19 +5,23 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class CommandImpl implements Command{
+public class CommandImpl implements Command{
 
     public boolean isExecute = true;
 
-    public final BufferedReader bufferedReader;
+    protected final BufferedReader bufferedReader;
 
-    public final Map<Integer, Command> mapCommands = new HashMap<>();
+    protected final Map<Integer, Command> mapCommands = new HashMap<>();
+
+    protected StringBuilder builderMenu = new StringBuilder();
 
     public CommandImpl(final BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;
     }
 
-    protected abstract void showMenu();
+    private void showMenu() {
+        System.out.print(builderMenu);
+    }
 
     @Override
     public void execute() {
@@ -32,7 +36,9 @@ public abstract class CommandImpl implements Command{
             } catch (NumberFormatException ex) {
                 System.out.println("This handler only accepts numbers. Try again.\n");
             }
-            catch (IOException ignored) {}
+            catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
         isExecute = true;
     }

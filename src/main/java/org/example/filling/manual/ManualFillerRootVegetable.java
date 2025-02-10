@@ -7,19 +7,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class RootVegetableManualFillerStrategy extends ManualFillerStrategy<RootVegetable> {
-    public RootVegetableManualFillerStrategy(List<RootVegetable> list) {
-        super(list);
+public class ManualFillerRootVegetable extends ManualFiller<RootVegetable> {
+    public ManualFillerRootVegetable(BufferedReader bufferedReader, List<RootVegetable> list) {
+        super(bufferedReader, list);
     }
 
     @Override
-    protected RootVegetable getV() {
+    protected RootVegetable getValue() {
         String type = "";
         double weight = 0;
         String color = "";
         boolean is = true;
         while (is) {
-            try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));){
+            try {
                 System.out.println("Enter type:\n");
                 type = bufferedReader.readLine();
                 System.out.println("Enter weight:\n");

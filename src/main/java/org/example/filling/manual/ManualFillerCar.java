@@ -7,20 +7,20 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class CarManualFillerStrategy extends ManualFillerStrategy<Car> {
+public class ManualFillerCar extends ManualFiller<Car> {
 
-    public CarManualFillerStrategy(List<Car> list) {
-        super(list);
+    public ManualFillerCar(BufferedReader bufferedReader, List<Car> list) {
+        super(bufferedReader, list);
     }
 
     @Override
-    protected Car getV() {
+    protected Car getValue() {
         int power = 0;
         String model = "";
         int year = 0;
         boolean is = true;
         while (is) {
-            try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));){
+            try {
                 System.out.println("Enter power:\n");
                 power = Integer.parseInt(bufferedReader.readLine());
                 System.out.println("Enter model:\n");
