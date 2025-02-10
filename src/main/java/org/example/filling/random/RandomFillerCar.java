@@ -9,7 +9,7 @@ import java.util.List;
 public class RandomFillerCar extends RandomFiller<Car> {
     public RandomFillerCar(BufferedReader bufferedReader, List<Car> list) {
         super(bufferedReader, list);
-        listRandom =  ReadFilesUtils.getCarsFromFile();
+        listRandom = ReadFilesUtils.getCarsFromFile();
     }
 
 }

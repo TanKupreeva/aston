@@ -1,55 +1,31 @@
 package org.example.filling;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.List;
+import java.util.function.IntConsumer;
+import java.util.stream.IntStream;
 
 public abstract class Filler<T>{
 
+    protected IntConsumer supplier;
+
     protected BufferedReader bufferedReader;
 
-    protected List<T> list;
+    protected List<T> originalList;
 
-    public Filler(BufferedReader bufferedReader, List<T> list) {
-        this.list = list;
+    public Filler(BufferedReader bufferedReader, List<T> originalList, IntConsumer supplier) {
+        this.originalList = originalList;
         this.bufferedReader = bufferedReader;
+        this.supplier = supplier;
     }
 
-    public String enterCapacity() {
-        boolean is = true;
-        int capacity = 0;
-        while (is) {
-            System.out.println("Enter capacity, or \"exit\" for exit:");
-            try {
-                String line = bufferedReader.readLine();
-                if (!line.equalsIgnoreCase("exit")) {
-                    capacity = Integer.parseInt(line);
-                } else return "***************************************************************************************\n" +
-                        "Exit filler.\n" +
-                        "***************************************************************************************\n";
-                is = false;
-            } catch (NumberFormatException ex) {
-                System.out.println("This handler only accepts numbers. Try again.\n");
-            }
-            catch (IOException ignored) {}
-        }
-        return fill(capacity);
+
+    abstract public void enterCapacity();
+
+    protected void fill(int capacity) {
+        IntStream.range(0, capacity).forEach(supplier);
+        System.out.println("***************************************************************************************\n" +
+                "Add " + capacity + " objects.\n" +
+                "***************************************************************************************\n");
     }
-
-    protected String fill(int capacity){
-        if (capacity != 0) {
-            for (int i = 0; i < capacity; i++) {
-                list.add(getValue());
-            }
-            return "***************************************************************************************\n" +
-                    "Add " + capacity + " objects.\n" +
-                    "***************************************************************************************\n";
-        }
-        else return "***************************************************************************************\n" +
-                "Exit from filling.\n" +
-                "***************************************************************************************\n";
-
-    }
-
-    protected abstract T getValue();
 }
