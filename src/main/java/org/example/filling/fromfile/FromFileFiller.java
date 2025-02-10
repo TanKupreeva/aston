@@ -15,10 +15,9 @@ public class FromFileFiller<T> extends Filler<T> {
 
     @Override
     public String fill(int capacity){
-        String flag = "";
-        if (capacity <= listFromFile.size()) ;
-        else {
-            flag = "Capacity <= listFromFile.size()";
+        String responce = "";
+        if (!(capacity <= listFromFile.size())) {
+            responce = "Capacity <= listFromFile.size()";
             capacity = listFromFile.size();
         }
         int j = 0;
@@ -28,7 +27,7 @@ public class FromFileFiller<T> extends Filler<T> {
         }
 
         return "***************************************************************************************\n" +
-                "Add " + capacity + " objects from file." + flag +
+                "Add " + capacity + " objects from file. " + responce + "\n" +
                 "***************************************************************************************\n" ;
     }
 

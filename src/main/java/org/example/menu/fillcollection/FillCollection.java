@@ -14,17 +14,14 @@ public class FillCollection<T> extends CommandImpl {
         builderMenu.append("Please select the fill type or exit:\n");
         mapCommands.put(1,()-> {
             System.out.println(fromFileFiller.enterCapacity());
-            mapCommands.get(4).execute();
         });
         builderMenu.append(1).append(" - From file.\n");
         mapCommands.put(2, () -> {
             System.out.println(randomFiller.enterCapacity());
-            mapCommands.get(4).execute();
         });
         builderMenu.append(2).append(" - Random values.\n");
         mapCommands.put(3, () -> {
             System.out.println(manualFiller.enterCapacity());
-            mapCommands.get(4).execute();
         });
         builderMenu.append(3).append(" - Manual.\n");
         mapCommands.put(4, ()-> {
