@@ -15,10 +15,12 @@ public abstract class ManualFiller<T> extends Filler<T> {
         super(bufferedReader, originalList, null);
         this.originalList = originalList;
         this.bufferedReader = bufferedReader;
-
-        this.intConsumer = (i) -> originalList.add(getValue());
+        this.intConsumer = (i) -> {
+            System.out.println("Object №" + (i+1));
+            originalList.add(getValue(i));
+        };
         menuBuilder2.append("Enter the number of objects to manual.\n")
-                .append("Or enter \"exit\" for exit.\n");
+                .append("Or enter \"exit\" for exit.");
     }
 
     public boolean checkInputData(String line) {
@@ -50,6 +52,6 @@ public abstract class ManualFiller<T> extends Filler<T> {
 //        }
     }
 
-    protected abstract T getValue();
+    protected abstract T getValue(int i);
 
 }

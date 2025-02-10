@@ -13,22 +13,23 @@ public class ManualFillerBook extends ManualFiller<Book> {
     }
 
     @Override
-    protected Book getValue() {
+    protected Book getValue(int i) {
         String author = "";
         String title = "";
         int pages = 0;
         boolean is = true;
         while (is) {
             try {
-                System.out.println("Enter author:\n");
+                System.out.println("Enter author:");
                 author = bufferedReader.readLine();
-                System.out.println("Enter title:\n");
+                System.out.println("Enter title:");
                 title = bufferedReader.readLine();
-                System.out.println("Enter pages:\n");
+                System.out.println("Enter pages:");
                 pages = Integer.parseInt(bufferedReader.readLine());
                 is = false;
             } catch (NumberFormatException ex) {
-                System.out.println("This field only accepts numbers. Try again.\n");
+                System.out.println("This field only accepts numbers.\n\n" +
+                        "Try filling object number " + i + " again.");
             }
             catch (IOException ignored) {}
         }

@@ -21,7 +21,6 @@ public class RandomFiller<T> extends Filler<T> {
 
     public RandomFiller(BufferedReader bufferedReader, List<T> originalList) {
         super(bufferedReader, originalList, null);
-
         this.intConsumer = (i) -> {
             int to = listRandom.size() - 1;
             int random_number = (int) (Math.random() * to);
@@ -31,7 +30,7 @@ public class RandomFiller<T> extends Filler<T> {
 
         menuBuilder2.append("Enter the number of objects to be added randomly.\n")
                 .append("Or enter \"exit\" for exit.\n")
-                .append("Attention! The data to fill in is taken from the file. The data may be repeated.\n");
+                .append("Attention! The data to fill in is taken from the file. The data may be repeated.");
     }
 
     public boolean checkInputData(String line) {

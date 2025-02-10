@@ -13,22 +13,23 @@ public class ManualFillerRootVegetable extends ManualFiller<RootVegetable> {
     }
 
     @Override
-    protected RootVegetable getValue() {
+    protected RootVegetable getValue(int i) {
         String type = "";
         double weight = 0;
         String color = "";
         boolean is = true;
         while (is) {
             try {
-                System.out.println("Enter type:\n");
+                System.out.println("Enter type:");
                 type = bufferedReader.readLine();
-                System.out.println("Enter weight:\n");
+                System.out.println("Enter weight:");
                 weight = Double.parseDouble(bufferedReader.readLine());
-                System.out.println("Enter color:\n");
+                System.out.println("Enter color:");
                 color = bufferedReader.readLine();
                 is = false;
             } catch (NumberFormatException ex) {
-                System.out.println("This field only accepts numbers. Try again.\n");
+                System.out.println("This field only accepts numbers.\n\n" +
+                        "Try filling object number " + i + " again.");
             }
             catch (IOException ignored) {}
         }

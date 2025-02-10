@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class CommandImpl implements Command{
 
-    public boolean isExecute = true;
+    protected boolean isExecute = true;
 
     protected final BufferedReader bufferedReader;
 
@@ -28,7 +28,8 @@ public class CommandImpl implements Command{
         while (isExecute) {
             showMenu();
             try {
-                Command commandImpl = mapCommands.get(Integer.parseInt(bufferedReader.readLine()));
+                int i = Integer.parseInt(bufferedReader.readLine());
+                Command commandImpl = mapCommands.get(i);
                 if (commandImpl != null) {
                     commandImpl.execute();
                 } else System.out.println("Invalid choice. Try again.\n");

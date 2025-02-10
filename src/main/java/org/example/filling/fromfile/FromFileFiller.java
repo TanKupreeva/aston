@@ -17,11 +17,10 @@ public class FromFileFiller<T> extends Filler<T> {
         super(bufferedReader, originalList, null);
         this.originalList = originalList;
         this.bufferedReader = bufferedReader;
-
         this.intConsumer = (i) -> originalList.add(listFromFile.get(i));
         menuBuilder2.append("Enter the number of objects to add from the file.\n")
                 .append("Or enter \"all\" to add all data from the file.\n")
-                .append("Or enter \"exit\" for exit.\n");
+                .append("Or enter \"exit\" for exit.");
     }
 
     public boolean checkInputData(String line) {

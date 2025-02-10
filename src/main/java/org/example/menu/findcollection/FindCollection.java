@@ -10,7 +10,7 @@ public class FindCollection<T> extends CommandImpl {
     public FindCollection(BufferedReader bufferedReader, Class<T> tClass,
                           List<T> list) {
         super(bufferedReader);
-        builderMenu.append("Please, select the field by which you want to find the object ").append(tClass.getSimpleName()).append(":\n");
+        builderMenu.append("Please, select the field class ").append(tClass.getSimpleName()).append(" for search:\n");
         mapCommands.put(1,()-> {
 //            fromFileFiller.fill();
         });

@@ -14,22 +14,23 @@ public class ManualFillerCar extends ManualFiller<Car> {
     }
 
     @Override
-    protected Car getValue() {
+    protected Car getValue(int i) {
         int power = 0;
         String model = "";
         int year = 0;
         boolean is = true;
         while (is) {
             try {
-                System.out.println("Enter power:\n");
+                System.out.println("Enter power:");
                 power = Integer.parseInt(bufferedReader.readLine());
-                System.out.println("Enter model:\n");
+                System.out.println("Enter model:");
                 model = bufferedReader.readLine();
-                System.out.println("Enter year:\n");
+                System.out.println("Enter year:");
                 year = Integer.parseInt(bufferedReader.readLine());
                 is = false;
             } catch (NumberFormatException ex) {
-                System.out.println("This field only accepts numbers. Try again.\n");
+                System.out.println("This field only accepts numbers.\n\n" +
+                        "Try filling object number " + i + " again.");
             }
             catch (IOException ignored) {}
         }
