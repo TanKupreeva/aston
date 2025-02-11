@@ -1,12 +1,13 @@
 package org.example.finder;
 
+import org.example.utils.soututils.GetValue;
 import org.example.utils.BinarySearch;
 
 import java.io.BufferedReader;
 import java.util.Comparator;
 import java.util.List;
 
-public abstract class Finder<T> {
+public class Finder<T> {
 
     protected final BufferedReader bufferedReader;
 
@@ -14,15 +15,22 @@ public abstract class Finder<T> {
 
     private final Comparator<T> comparator;
 
-    public Finder(BufferedReader bufferedReader, List<T> originalList, Comparator<T> comparator) {
+    private final GetValue<T> function;
+
+    public Finder(BufferedReader bufferedReader,
+                  List<T> originalList,
+                  GetValue<T>  function,
+                  Comparator<T> comparator) {
         this.bufferedReader = bufferedReader;
         this.originalList = originalList;
         this.comparator = comparator;
+        this.function = function;
     }
 
     public void find() {
         System.out.print("\nFill in the fields to search the collection:\n");
-        T key = getValue();
+        int i = -1;
+        T key = function.getFunction().apply(i);
         originalList.sort(comparator);
         int index = BinarySearch.search(originalList, key, comparator);
 
@@ -35,7 +43,5 @@ public abstract class Finder<T> {
                 "Element not found! Try again...\n"+
                 "***************************************************************************************\n");
     }
-
-    protected abstract T getValue();
 
 }
