@@ -5,14 +5,13 @@ import org.example.entity.Car;
 import org.example.entity.RootVegetable;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReadFilesUtils {
 
-    private static final List<Book> booksFromFile = new ArrayList<>();
-    private static final List<Car> carsFromFile = new ArrayList<>();
-    private static final List<RootVegetable> rootVegetablesFromFile = new ArrayList<>();
+    private static final List<Book> booksFromFile = new MyArrayList<>();
+    private static final List<Car> carsFromFile = new MyArrayList<>();
+    private static final List<RootVegetable> rootVegetablesFromFile = new MyArrayList<>();
 
     static {
         File dir = new File("src/main/resources/examples"); //path указывает на директорию
@@ -36,7 +35,7 @@ public class ReadFilesUtils {
 
 
     private static List<String[]> setObjectsFromFile(File file) {
-        List<String[]> fileContent = new ArrayList<>();
+        List<String[]> fileContent = new MyArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));){
             while (bufferedReader.ready()) {
                 String line = bufferedReader.readLine();

@@ -7,18 +7,18 @@ import org.example.menu.selectaction.SelectAction;
 import org.example.menu.selectaction.SelectActionBook;
 import org.example.menu.selectaction.SelectActionCar;
 import org.example.menu.selectaction.SelectActionRootVegetable;
+import org.example.utils.MyArrayList;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SelectClass extends CommandImpl {
 
-    private final static List<Book> BOOKS = new ArrayList<>();
-    private final static List<Car> CARS = new ArrayList<>();
-    private final static List<RootVegetable> ROOT_VEGETABLES = new ArrayList<>();
+    private final static List<Book> BOOKS = new MyArrayList<>();
+    private final static List<Car> CARS = new MyArrayList<>();
+    private final static List<RootVegetable> ROOT_VEGETABLES = new MyArrayList<>();
 
     private SelectClass(BufferedReader bufferedReader) {
         super(bufferedReader);
