@@ -8,7 +8,6 @@ import java.util.List;
 
 public class FillerFromFileRootVegetable extends FillerFromFile<RootVegetable> {
     public FillerFromFileRootVegetable(BufferedReader bufferedReader, List<RootVegetable> list) {
-        super(bufferedReader, list);
-        listFromFile = ReadFilesUtils.getRootVegetablesFromFile();
+        super(bufferedReader, list, ReadFilesUtils.getRootVegetablesFromFile());
     }
 }

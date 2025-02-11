@@ -9,9 +9,8 @@ public abstract class FillerManual<T> extends Filler<T> {
 
     public FillerManual(BufferedReader bufferedReader, List<T> originalList) {
         super(bufferedReader, originalList, null);
-        this.originalList = originalList;
-        this.bufferedReader = bufferedReader;
-        this.intConsumer = (i) -> {
+        this.intConsumer =
+                (i) -> {
             System.out.println("Object №" + (i+1));
             originalList.add(getValue(i));
         };

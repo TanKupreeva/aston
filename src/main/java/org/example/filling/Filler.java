@@ -10,9 +10,9 @@ public abstract class Filler<T>{
 
     protected IntConsumer intConsumer;
 
-    protected BufferedReader bufferedReader;
+    protected final BufferedReader bufferedReader;
 
-    protected List<T> originalList;
+    protected final List<T> originalList;
 
     protected final StringBuilder menuBuilder2 = new StringBuilder()
             .append("\nEnter the number of objects.\n")

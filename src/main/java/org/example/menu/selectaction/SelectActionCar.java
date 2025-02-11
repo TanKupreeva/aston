@@ -10,10 +10,11 @@ import java.util.List;
 
 public class SelectActionCar extends SelectAction<Car> {
     public SelectActionCar(BufferedReader bufferedReader, List<Car> list) {
-        super(bufferedReader, Car.class,
+        super(bufferedReader,
+                Car.class,
+                list,
                 new FillCollectionCar(bufferedReader, list),
                 new FinderCar(bufferedReader, list, new CarComparator().getComparator()),
                 new CarComparator());
-        this.list = list;
     }
 }

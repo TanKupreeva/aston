@@ -8,7 +8,6 @@ import java.util.List;
 
 public class FillerFromFileCar extends FillerFromFile<Car> {
     public FillerFromFileCar(BufferedReader bufferedReader, List<Car> list) {
-        super(bufferedReader, list);
-        listFromFile = ReadFilesUtils.getCarsFromFile();
+        super(bufferedReader, list, ReadFilesUtils.getCarsFromFile());
     }
 }

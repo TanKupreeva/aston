@@ -12,11 +12,14 @@ public class SelectAction<T> extends CommandImpl {
 
     protected List<T> list;
 
-    public SelectAction(BufferedReader bufferedReader, Class<T> tClass,
+    public SelectAction(BufferedReader bufferedReader,
+                        Class<T> tClass,
+                        List<T> list,
                         FillCollection<T> filler,
                         Finder<T> finder,
                         AllComparator<T> comparator) {
         super(bufferedReader);
+        this.list = list;
         builderMenu.append("\nPlease, select an action for ").append(tClass.getSimpleName()).append(" or exit:\n");
 
         mapCommands.put(1, filler);

@@ -8,7 +8,6 @@ import java.util.List;
 
 public class FillerRandomCar extends FillerRandom<Car> {
     public FillerRandomCar(BufferedReader bufferedReader, List<Car> list) {
-        super(bufferedReader, list);
-        listRandom = ReadFilesUtils.getCarsFromFile();
+        super(bufferedReader, list, ReadFilesUtils.getCarsFromFile());
     }
 }

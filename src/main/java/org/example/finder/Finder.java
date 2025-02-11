@@ -8,9 +8,9 @@ import java.util.List;
 
 public abstract class Finder<T> {
 
-    protected BufferedReader bufferedReader;
+    protected final BufferedReader bufferedReader;
 
-    protected List<T> originalList;
+    protected final List<T> originalList;
 
     private final Comparator<T> comparator;
 

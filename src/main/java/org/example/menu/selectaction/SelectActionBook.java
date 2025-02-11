@@ -10,10 +10,11 @@ import java.util.List;
 
 public class SelectActionBook extends SelectAction<Book>{
     public SelectActionBook(BufferedReader bufferedReader, List<Book> list) {
-        super(bufferedReader, Book.class,
+        super(bufferedReader,
+                Book.class,
+                list,
                 new FillCollectionBook(bufferedReader, list),
                 new FinderBook(bufferedReader, list, new BookComparator().getComparator()),
                 new BookComparator());
-        this.list = list;
     }
 }

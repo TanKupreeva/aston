@@ -15,16 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SelectClass extends CommandImpl {
-    private final static List<Book> books = new ArrayList<>();
-    private final static List<Car> cars = new ArrayList<>();
-    private final static List<RootVegetable> rootVegetables = new ArrayList<>();
+
+    private final static List<Book> BOOKS = new ArrayList<>();
+    private final static List<Car> CARS = new ArrayList<>();
+    private final static List<RootVegetable> ROOT_VEGETABLES = new ArrayList<>();
 
     private SelectClass(BufferedReader bufferedReader) {
         super(bufferedReader);
         builderMenu.append("\nPlease, select a collection class to operate on:\n");
-        SelectAction<Book> bookSelectAction = new SelectActionBook(bufferedReader, books);
-        SelectAction<Car> carSelectAction = new SelectActionCar(bufferedReader, cars);
-        SelectAction<RootVegetable> rootVegetableSelectAction = new SelectActionRootVegetable(bufferedReader, rootVegetables);
+        SelectAction<Book> bookSelectAction = new SelectActionBook(bufferedReader, BOOKS);
+        SelectAction<Car> carSelectAction = new SelectActionCar(bufferedReader, CARS);
+        SelectAction<RootVegetable> rootVegetableSelectAction = new SelectActionRootVegetable(bufferedReader, ROOT_VEGETABLES);
 
         mapCommands.put(1, bookSelectAction);
         builderMenu.append(1).append(" - Book.\n");

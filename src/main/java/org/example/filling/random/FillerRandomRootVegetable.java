@@ -8,7 +8,6 @@ import java.util.List;
 
 public class FillerRandomRootVegetable extends FillerRandom<RootVegetable> {
     public FillerRandomRootVegetable(BufferedReader bufferedReader, List<RootVegetable> list) {
-        super(bufferedReader, list);
-        listRandom = ReadFilesUtils.getRootVegetablesFromFile();
+        super(bufferedReader, list, ReadFilesUtils.getRootVegetablesFromFile());
     }
 }

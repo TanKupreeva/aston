@@ -13,7 +13,7 @@ public class CommandImpl implements Command{
 
     protected final Map<Integer, Command> mapCommands = new HashMap<>();
 
-    protected StringBuilder builderMenu = new StringBuilder();
+    protected final StringBuilder builderMenu = new StringBuilder();
 
     public CommandImpl(final BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;

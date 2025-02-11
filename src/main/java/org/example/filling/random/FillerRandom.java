@@ -7,10 +7,11 @@ import java.util.List;
 
 public class FillerRandom<T> extends Filler<T> {
 
-    protected List<T> listRandom;
+    protected final List<T> listRandom;
 
-    public FillerRandom(BufferedReader bufferedReader, List<T> originalList) {
+    public FillerRandom(BufferedReader bufferedReader, List<T> originalList, List<T> listRandom) {
         super(bufferedReader, originalList, null);
+        this.listRandom = listRandom;
         this.intConsumer = (i) -> {
             int to = listRandom.size() - 1;
             int random_number = (int) (Math.random() * to);
