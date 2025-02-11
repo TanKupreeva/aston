@@ -5,10 +5,23 @@ public class RootVegetable {
     private final double weight;
     private final String color;
 
-    private RootVegetable(RootVegetableBuilder rootVegetableBuilder) {
-        this.type = rootVegetableBuilder.type;
-        this.weight = rootVegetableBuilder.weight;
-        this.color = rootVegetableBuilder.color;
+    RootVegetable(String type, double weight, String color) {
+        this.type = type;
+        this.weight = weight;
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "RootVegetable{" +
+                "type='" + type + '\'' +
+                ", weight=" + weight +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
+    public static RootVegetableBuilder builder() {
+        return new RootVegetableBuilder();
     }
 
     public String getType() {
@@ -26,6 +39,9 @@ public class RootVegetable {
         private double weight;
         private String color;
 
+        RootVegetableBuilder() {
+        }
+
         public RootVegetableBuilder type(String type) {
             this.type = type;
             return this;
@@ -42,7 +58,11 @@ public class RootVegetable {
         }
 
         public RootVegetable build() {
-            return new RootVegetable(this);
+            return new RootVegetable(this.type, this.weight, this.color);
+        }
+
+        public String toString() {
+            return "RootVegetable.RootVegetableBuilder(type=" + this.type + ", weight=" + this.weight + ", color=" + this.color + ")";
         }
     }
 }
