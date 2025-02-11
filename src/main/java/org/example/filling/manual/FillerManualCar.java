@@ -4,12 +4,11 @@ import org.example.entity.Car;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 
-public class ManualFillerCar extends ManualFiller<Car> {
+public class FillerManualCar extends FillerManual<Car> {
 
-    public ManualFillerCar(BufferedReader bufferedReader, List<Car> list) {
+    public FillerManualCar(BufferedReader bufferedReader, List<Car> list) {
         super(bufferedReader, list);
     }
 

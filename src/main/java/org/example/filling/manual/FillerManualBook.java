@@ -6,9 +6,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
 
-public class ManualFillerBook extends ManualFiller<Book> {
+public class FillerManualBook extends FillerManual<Book> {
 
-    public ManualFillerBook(BufferedReader bufferedReader, List<Book> list) {
+    public FillerManualBook(BufferedReader bufferedReader, List<Book> list) {
         super(bufferedReader, list);
     }
 

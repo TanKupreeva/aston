@@ -105,14 +105,6 @@ public class ReadFilesUtils {
         }
     }
 
-//    public static List<?> getListFromFile(Type type) {
-//        return switch (type) {
-//            case BOOK -> getBooksFromFile();
-//            case CAR -> getCarsFromFile();
-//            case ROOT_VEGETABLE -> getRootVegetablesFromFile();
-//        };
-//    }
-
     public static List<Book> getBooksFromFile() {
         return booksFromFile;
     }

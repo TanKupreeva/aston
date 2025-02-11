@@ -21,7 +21,7 @@ public class SelectClass extends CommandImpl {
 
     private SelectClass(BufferedReader bufferedReader) {
         super(bufferedReader);
-        builderMenu.append("Please, select a collection class to operate on:\n");
+        builderMenu.append("\nPlease, select a collection class to operate on:\n");
         SelectAction<Book> bookSelectAction = new SelectActionBook(bufferedReader, books);
         SelectAction<Car> carSelectAction = new SelectActionCar(bufferedReader, cars);
         SelectAction<RootVegetable> rootVegetableSelectAction = new SelectActionRootVegetable(bufferedReader, rootVegetables);

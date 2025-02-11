@@ -14,7 +14,9 @@ public abstract class Filler<T>{
 
     protected List<T> originalList;
 
-    protected final StringBuilder menuBuilder2 = new StringBuilder();
+    protected final StringBuilder menuBuilder2 = new StringBuilder()
+            .append("\nEnter the number of objects.\n")
+            .append("Or enter \"exit\" for exit.\n");
 
     public Filler(BufferedReader bufferedReader, List<T> originalList, IntConsumer intConsumer) {
         this.originalList = originalList;
@@ -29,7 +31,7 @@ public abstract class Filler<T>{
             try {
                 String line = bufferedReader.readLine();
                 if (line.equalsIgnoreCase("exit")) {
-                    System.out.println("***************************************************************************************\n" +
+                    System.out.print("***************************************************************************************\n" +
                             "Exit filler.\n" +
                             "***************************************************************************************\n");
                     isWork = false;
@@ -38,7 +40,7 @@ public abstract class Filler<T>{
                 }
 
             } catch (NumberFormatException ex) {
-                System.out.println("This handler only accepts numbers. Try again.\n");
+                System.out.print("ERROR. This handler only accepts numbers. Try again.\n");
             }
             catch (IOException ignored) {}
         }
@@ -49,7 +51,7 @@ public abstract class Filler<T>{
 
     protected void fill(int capacity) {
         IntStream.range(0, capacity).forEach(intConsumer);
-        System.out.println("***************************************************************************************\n" +
+        System.out.print("***************************************************************************************\n" +
                 "Add " + capacity + " objects.\n" +
                 "***************************************************************************************\n");
     }

@@ -6,8 +6,8 @@ import org.example.utils.ReadFilesUtils;
 import java.io.BufferedReader;
 import java.util.List;
 
-public class RandomFillerRootVegetable extends RandomFiller<RootVegetable> {
-    public RandomFillerRootVegetable(BufferedReader bufferedReader, List<RootVegetable> list) {
+public class FillerRandomRootVegetable extends FillerRandom<RootVegetable> {
+    public FillerRandomRootVegetable(BufferedReader bufferedReader, List<RootVegetable> list) {
         super(bufferedReader, list);
         listRandom = ReadFilesUtils.getRootVegetablesFromFile();
     }
