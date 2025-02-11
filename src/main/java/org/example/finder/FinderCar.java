@@ -10,11 +10,6 @@ import java.util.List;
 public class FinderCar extends Finder<Car> {
     public FinderCar(BufferedReader bufferedReader, List<Car> originalList, Comparator<Car> comparator) {
         super(bufferedReader, originalList, comparator);
-//        menuBuilder2
-//                .append("Where:\n")
-//                .append("1 - power.\n")
-//                .append("2 - model.\n")
-//                .append("3 - year.");
     }
 
     @Override
@@ -45,49 +40,5 @@ public class FinderCar extends Finder<Car> {
                 .build();
         return car;
     }
-
-//    @Override
-//    protected Car getValue(int[] arr) {
-//        Car car = null;
-//        boolean is = true;
-//        while (is) {
-//            try {
-//                int power = 0;
-//                String model = "";
-//                int year = 0;
-//                for (int j : arr) {
-//                    switch (j) {
-//                        case 1: {
-//                            System.out.println("Enter power:");
-//                            power = Integer.parseInt(bufferedReader.readLine());
-//                        }
-//                        break;
-//                        case 2: {
-//                            System.out.println("Enter model:");
-//                            model = bufferedReader.readLine();
-//                        }
-//                        break;
-//                        case 3: {
-//                            System.out.println("Enter year:");
-//                            year = Integer.parseInt(bufferedReader.readLine());
-//                        }
-//                        break;
-//                    }
-//                }
-//                car = Car.builder()
-//                        .power(power)
-//                        .model(model)
-//                        .year(year)
-//                        .build();
-//                is = false;
-//            } catch (NumberFormatException ex) {
-//                System.out.println("This field only accepts numbers.\n\n" +
-//                        "Try filling object again.");
-//            }
-//            catch (IOException ignored) {}
-//        }
-//
-//        return car;
-//    }
 
 }

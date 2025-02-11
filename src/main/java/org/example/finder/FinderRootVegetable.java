@@ -10,11 +10,6 @@ import java.util.List;
 public class FinderRootVegetable extends Finder<RootVegetable> {
     public FinderRootVegetable(BufferedReader bufferedReader, List<RootVegetable> originalList, Comparator<RootVegetable> comparator) {
         super(bufferedReader, originalList, comparator);
-//        menuBuilder2
-//                .append("Where:\n")
-//                .append("1 - type.\n")
-//                .append("2 - weight.\n")
-//                .append("3 - color.");
     }
 
     @Override
@@ -45,49 +40,5 @@ public class FinderRootVegetable extends Finder<RootVegetable> {
                 .build();
         return rootVegetable;
     }
-
-//    @Override
-//    protected RootVegetable getValue(int[] arr) {
-//        RootVegetable rootVegetable = null;
-//        boolean is = true;
-//        while (is) {
-//            try {
-//                String type = "";
-//                double weight = 0;
-//                String color = "";
-//                for (int j : arr) {
-//                    switch (j) {
-//                        case 1: {
-//                            System.out.println("Enter type:");
-//                            type = bufferedReader.readLine();
-//                        }
-//                        break;
-//                        case 2: {
-//                            System.out.println("Enter weight:");
-//                            weight = Double.parseDouble(bufferedReader.readLine());
-//                        }
-//                        break;
-//                        case 3: {
-//                            System.out.println("Enter color:");
-//                            color = bufferedReader.readLine();
-//                        }
-//                        break;
-//                    }
-//                }
-//                rootVegetable = RootVegetable.builder()
-//                        .type(type)
-//                        .weight(weight)
-//                        .color(color)
-//                        .build();
-//                is = false;
-//            } catch (NumberFormatException ex) {
-//                System.out.println("This field only accepts numbers.\n\n" +
-//                        "Try filling object again.");
-//            }
-//            catch (IOException ignored) {}
-//        }
-//
-//        return rootVegetable;
-//    }
 
 }
