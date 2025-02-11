@@ -14,7 +14,7 @@ public class ReadFilesUtils {
     private static final List<RootVegetable> rootVegetablesFromFile = new MyArrayList<>();
 
     static {
-        File dir = new File("src/main/resources/examples");
+        File dir = new File("src/main/resources/examples"); //path указывает на директорию
         File[] arrFiles = dir.listFiles();
 
         for (File file : arrFiles) {

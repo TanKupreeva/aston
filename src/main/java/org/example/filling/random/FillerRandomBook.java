@@ -1,7 +1,7 @@
 package org.example.filling.random;
 
 import org.example.entity.Book;
-
+import org.example.utils.ReadFilesUtils;
 
 import java.io.BufferedReader;
 import java.util.List;
@@ -11,5 +11,3 @@ public class FillerRandomBook extends FillerRandom<Book> {
         super(bufferedReader, list,  ReadFilesUtils.getBooksFromFile());
     }
 }
-
-
