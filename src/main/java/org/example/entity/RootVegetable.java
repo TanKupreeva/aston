@@ -25,13 +25,15 @@ public class RootVegetable {
     }
 
     public String getType() {
-        return type;
+        return this.type;
     }
+
     public double getWeight() {
-        return weight;
+        return this.weight;
     }
+
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public static class RootVegetableBuilder {
@@ -65,4 +67,5 @@ public class RootVegetable {
             return "RootVegetable.RootVegetableBuilder(type=" + this.type + ", weight=" + this.weight + ", color=" + this.color + ")";
         }
     }
+
 }

@@ -10,6 +10,7 @@ public class Car {
         this.model = model;
         this.year = year;
     }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -23,9 +24,17 @@ public class Car {
         return new CarBuilder();
     }
 
-    public int getPower() { return power; }
-    public String getModel() { return model; }
-    public int getYear() { return year; }
+    public int getPower() {
+        return this.power;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
 
     public static class CarBuilder {
         private int power;

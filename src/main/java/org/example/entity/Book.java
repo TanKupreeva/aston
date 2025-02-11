@@ -1,14 +1,14 @@
 package org.example.entity;
 
-public class Book {
+public class Book{
     private final String author;
     private final String title;
-    private final int page;
+    private final int pages;
 
-    Book(String author, String title, int page) {
+    Book(String author, String title, int pages) {
         this.author = author;
         this.title = title;
-        this.page = page;
+        this.pages = pages;
     }
 
     @Override
@@ -16,7 +16,7 @@ public class Book {
         return "Book{" +
                 "author='" + author + '\'' +
                 ", title='" + title + '\'' +
-                ", pages=" + page +
+                ", pages=" + pages +
                 '}';
     }
 
@@ -25,19 +25,21 @@ public class Book {
     }
 
     public String getAuthor() {
-        return author;
+        return this.author;
     }
+
     public String getTitle() {
-        return title;
+        return this.title;
     }
-    public int getPage_count() {
-        return page;
+
+    public int getPages() {
+        return this.pages;
     }
 
     public static class BookBuilder {
         private String author;
         private String title;
-        private int page;
+        private int pages;
 
         BookBuilder() {
         }
@@ -52,17 +54,17 @@ public class Book {
             return this;
         }
 
-        public BookBuilder page(int page) {
-            this.page = page;
+        public BookBuilder pages(int pages) {
+            this.pages = pages;
             return this;
         }
 
         public Book build() {
-            return new Book(this.author, this.title, this.page);
+            return new Book(this.author, this.title, this.pages);
         }
 
         public String toString() {
-            return "Book.BookBuilder(author=" + this.author + ", title=" + this.title + ", pages=" + this.page + ")";
+            return "Book.BookBuilder(author=" + this.author + ", title=" + this.title + ", pages=" + this.pages + ")";
         }
     }
 }
