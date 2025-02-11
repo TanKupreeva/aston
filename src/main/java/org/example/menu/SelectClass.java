@@ -47,7 +47,7 @@ public class SelectClass extends CommandImpl {
             CommandImpl mainCommand = new SelectClass(bufferedReader);
             mainCommand.execute();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 

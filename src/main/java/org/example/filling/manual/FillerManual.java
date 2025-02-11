@@ -17,7 +17,7 @@ public abstract class FillerManual<T> extends Filler<T> {
         menuBuilder2.append("Objects will be added manually.");
     }
 
-    public boolean checkInputData(String line) {
+    protected boolean checkInputData(String line) {
         int capacity = Integer.parseInt(line);
         if (capacity != 0)  {
             fill(capacity);

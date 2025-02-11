@@ -35,10 +35,10 @@ public class CommandImpl implements Command{
                 } else System.out.println("Invalid choice. Try again.\n");
 
             } catch (NumberFormatException ex) {
-                System.out.println("This handler only accepts numbers. Try again.\n");
+                System.out.print("This handler only accepts numbers. Try again.\n");
             }
-            catch (IOException ex) {
-                ex.printStackTrace();
+            catch (IOException e) {
+                e.printStackTrace();
             }
         }
         isExecute = true;

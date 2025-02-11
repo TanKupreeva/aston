@@ -42,12 +42,14 @@ public abstract class Filler<T>{
             } catch (NumberFormatException ex) {
                 System.out.print("ERROR. This handler only accepts numbers. Try again.\n");
             }
-            catch (IOException ignored) {}
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
 
-    abstract protected boolean checkInputData(String line);
+    protected abstract boolean checkInputData(String line);
 
     protected void fill(int capacity) {
         IntStream.range(0, capacity).forEach(intConsumer);

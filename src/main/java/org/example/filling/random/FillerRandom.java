@@ -24,7 +24,7 @@ public class FillerRandom<T> extends Filler<T> {
 
     }
 
-    public boolean checkInputData(String line) {
+    protected boolean checkInputData(String line) {
         int capacity = Integer.parseInt(line);
         if (capacity != 0)  {
             fill(capacity);

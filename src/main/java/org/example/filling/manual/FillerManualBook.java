@@ -28,10 +28,12 @@ public class FillerManualBook extends FillerManual<Book> {
                 pages = Integer.parseInt(bufferedReader.readLine());
                 is = false;
             } catch (NumberFormatException ex) {
-                System.out.println("This field only accepts numbers.\n\n" +
+                System.out.print("This field only accepts numbers.\n\n" +
                         "Try filling object number " + i + " again.");
             }
-            catch (IOException ignored) {}
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         Book book = Book.builder()
                 .author(author)

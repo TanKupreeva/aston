@@ -28,10 +28,12 @@ public class FinderCar extends Finder<Car> {
                 year = Integer.parseInt(bufferedReader.readLine());
                 is = false;
             } catch (NumberFormatException ex) {
-                System.out.println("This field only accepts numbers.\n\n" +
+                System.out.print("This field only accepts numbers.\n\n" +
                         "Try again.");
             }
-            catch (IOException ignored) {}
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         Car car = Car.builder()
                 .power(power)
