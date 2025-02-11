@@ -32,6 +32,7 @@ public final class MyArrayList <E> extends AbstractList<E> implements List<E> {
         return elementData(index);
     }
 
+
     private E elementData(int index) {
         return (E) elementData[index];
     }
@@ -41,6 +42,14 @@ public final class MyArrayList <E> extends AbstractList<E> implements List<E> {
     @Override
     public void sort(Comparator<? super E> c) {
         mergeSort.sort(c);
+    }
+
+    @Override
+    public E set(int index, E element) {
+        Objects.checkIndex(index, size);
+        E oldValue = elementData(index);
+        elementData[index] = element;
+        return oldValue;
     }
 
     @Override
