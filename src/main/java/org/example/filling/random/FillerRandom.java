@@ -1,4 +1,4 @@
-package org.example.random;
+package org.example.filling.random;
 
 import org.example.filling.Filler;
 
