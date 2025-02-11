@@ -32,7 +32,7 @@ public class SelectAction<T> extends CommandImpl {
         });
         builderMenu.append(2).append(" - Find an element of a sorted collection.\n");
 
-        mapCommands.put(3, () -> System.out.println(list));
+        mapCommands.put(3, () -> list.forEach(System.out::println));
         builderMenu.append(3).append(" - Display collection items.\n");
 
         mapCommands.put(4, () -> list.sort(comparator.getComparator()));
