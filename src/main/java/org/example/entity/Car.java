@@ -5,10 +5,22 @@ public class Car {
     private final String model;
     private final int year;
 
-    private Car(CarBuilder carBuilder) {
-        this.power = carBuilder.power;
-        this.model = carBuilder.model;
-        this.year = carBuilder.year;
+    Car(int power, String model, int year) {
+        this.power = power;
+        this.model = model;
+        this.year = year;
+    }
+    @Override
+    public String toString() {
+        return "Car{" +
+                "power=" + power +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                '}';
+    }
+
+    public static CarBuilder builder() {
+        return new CarBuilder();
     }
 
     public int getPower() { return power; }
@@ -19,6 +31,9 @@ public class Car {
         private int power;
         private String model;
         private int year;
+
+        CarBuilder() {
+        }
 
         public CarBuilder power(int power) {
             this.power = power;
@@ -36,7 +51,11 @@ public class Car {
         }
 
         public Car build() {
-            return new Car(this);
+            return new Car(this.power, this.model, this.year);
+        }
+
+        public String toString() {
+            return "Car.CarBuilder(power=" + this.power + ", model=" + this.model + ", year=" + this.year + ")";
         }
     }
 }
