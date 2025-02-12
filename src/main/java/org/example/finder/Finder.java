@@ -1,7 +1,9 @@
 package org.example.finder;
 
+import org.example.menu.SaveElements;
 import org.example.soututils.GetValue;
 import org.example.utils.BinarySearch;
+import org.example.utils.MyArrayList;
 
 import java.io.BufferedReader;
 import java.util.Comparator;
@@ -17,6 +19,10 @@ public class Finder<T> {
 
     private final GetValue<T> function;
 
+    private final SaveElements<T> saveElements;
+
+    private final List<T> elementsForSave;
+
     public Finder(BufferedReader bufferedReader,
                   List<T> originalList,
                   GetValue<T> function,
@@ -25,6 +31,9 @@ public class Finder<T> {
         this.originalList = originalList;
         this.comparator = comparator;
         this.function = function;
+
+        elementsForSave = new MyArrayList<>(1);
+        saveElements = new SaveElements<>(bufferedReader, elementsForSave);
     }
 
     public void find() {
@@ -39,6 +48,9 @@ public class Finder<T> {
                     "Element found!\n" +
                     "Element=" + originalList.get(index) + "\n" +
                     "***************************************************************************************\n");
+            elementsForSave.add(originalList.get(index));
+            saveElements.execute();
+            elementsForSave.remove(index);
         } else
             System.out.print("***************************************************************************************\n" +
                     "Element not found! Try again...\n" +

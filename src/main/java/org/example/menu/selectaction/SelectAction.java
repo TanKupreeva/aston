@@ -1,6 +1,5 @@
 package org.example.menu.selectaction;
 
-import org.example.entity.comparators.AllComparator;
 import org.example.finder.Finder;
 import org.example.menu.Command;
 import org.example.menu.CommandImpl;
@@ -17,7 +16,7 @@ public class SelectAction<T> extends CommandImpl {
 
     protected final String nameCollection;
 
-    Consumer<Command> isError = (i) -> {
+    Consumer<Command> collectionIsEmpty = (i) -> {
         if (list.isEmpty())
             System.out.print("ERROR. THE LIST IS EMPTY\n" +
                     "First fill out the list, then search.\n");
@@ -38,18 +37,18 @@ public class SelectAction<T> extends CommandImpl {
         mapCommands.put(1, filler);
         builderMenu.append(1).append(" - Fill collections.\n");
 
-        mapCommands.put(2, ()-> isError.accept(finder::find));
+        mapCommands.put(2, ()-> collectionIsEmpty.accept(finder::find));
         builderMenu.append(2).append(" - Find an element of a sorted collection.\n");
 
-        mapCommands.put(3, () -> isError.accept(() -> {
+        mapCommands.put(3, () -> collectionIsEmpty.accept(() -> {
             System.out.print("***************************************************************************************\n");
-            System.out.print(list.size()+" elements:\n");
+            System.out.print(list.size() + " elements:\n");
             list.forEach(System.out::println);
             System.out.print("***************************************************************************************\n");
         }));
         builderMenu.append(3).append(" - Display collection items.\n");
 
-        mapCommands.put(4, () -> isError.accept(sort::execute));
+        mapCommands.put(4, () -> collectionIsEmpty.accept(sort));
         builderMenu.append(4).append(" - Sort collection items by all filed.\n");
 
         mapCommands.put(5, ()-> {

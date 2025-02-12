@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SelectSort<T> extends CommandImpl {
 
-    protected List<T> list;
+    protected final List<T> list;
 
     protected final String nameCollection;
 
@@ -19,13 +19,16 @@ public class SelectSort<T> extends CommandImpl {
         this.list = list;
         this.nameCollection = tClass.getSimpleName();
 
+        SaveElements<T> saveElements = new SaveElements<>(bufferedReader, list);
+
         builderMenu.append("\nPlease select a sorting method").append(" or exit:\n");
 
         mapCommands.put(1, () -> {
-                    list.sort(comparator.getComparatorDefault());
-                    System.out.print("***************************************************************************************\n" +
-                            "The " + nameCollection + " Collection is sorted! Sorter default.\n" +
-                            "***************************************************************************************\n");
+            list.sort(comparator.getComparatorDefault());
+            System.out.print("***************************************************************************************\n" +
+                    "The " + nameCollection + " Collection is sorted! Sorter default.\n" +
+                    "***************************************************************************************\n");
+            saveElements.execute();
                 });
         builderMenu.append(1).append(" - Default sorting.\n");
 
@@ -34,6 +37,7 @@ public class SelectSort<T> extends CommandImpl {
             System.out.print("***************************************************************************************\n" +
                     "The " + nameCollection + " Collection is sorted! Sorter additional.\n" +
                     "***************************************************************************************\n");
+            saveElements.execute();
         });
         builderMenu.append(2).append(" - Additional sorting.\n");
 
