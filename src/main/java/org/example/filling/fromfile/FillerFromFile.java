@@ -23,13 +23,12 @@ public class FillerFromFile<T> extends Filler<T> {
             return false;
         } else {
             int capacity = Integer.parseInt(line);
-            if (capacity != 0)  {
+            if (capacity != 0) {
                 if (capacity < listFromFile.size()) {
                     fill(capacity);
                     return false;
                 } else System.out.println("ERROR. Capacity exceeds the limit. Try again.");
-            }
-            else System.out.println("ERROR. Capacity != 0. Try again.");
+            } else System.out.println("ERROR. Capacity != 0. Try again.");
         }
         return true;
     }

@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ListIterator;
 
-public final class MergeSort <T>{
+public final class MergeSort<T> {
 
     private final List<T> list;
 
@@ -32,16 +32,16 @@ public final class MergeSort <T>{
 
         // Insertion sort on smallest arrays
         if (length < 7) {
-            for (int i=low; i<high; i++)
-                for (int j=i; j>low && comparator.compare(dest[j-1], dest[j])>0; j--)
-                    swap(dest, j, j-1);
+            for (int i = low; i < high; i++)
+                for (int j = i; j > low && comparator.compare(dest[j - 1], dest[j]) > 0; j--)
+                    swap(dest, j, j - 1);
             return;
         }
 
         // Recursively sort halves of dest into src
-        int destLow  = low;
+        int destLow = low;
         int destHigh = high;
-        low  += off;
+        low += off;
         high += off;
         int mid = (low + high) >>> 1;
         mergeSort(dest, src, low, mid, -off, comparator);
@@ -49,13 +49,13 @@ public final class MergeSort <T>{
 
         // If list is already sorted, just copy from src to dest.  This is an
         // optimization that results in faster sorts for nearly ordered lists.
-        if (comparator.compare(src[mid-1], src[mid]) <= 0) {
+        if (comparator.compare(src[mid - 1], src[mid]) <= 0) {
             System.arraycopy(src, low, dest, destLow, length);
             return;
         }
 
         // Merge sorted halves (now in src) into dest
-        for(int i = destLow, p = low, q = mid; i < destHigh; i++) {
+        for (int i = destLow, p = low, q = mid; i < destHigh; i++) {
             if (q >= high || p < mid && comparator.compare(src[p], src[q]) <= 0)
                 dest[i] = src[p++];
             else

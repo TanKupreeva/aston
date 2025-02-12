@@ -14,20 +14,19 @@ public class FillerManual<T> extends Filler<T> {
         super(bufferedReader, originalList, null);
         this.intConsumer =
                 (i) -> {
-            System.out.println("Object №" + (i+1));
-            T value = function.getFunction().apply(i);
-            originalList.add(value);
-        };
+                    System.out.println("Object №" + (i + 1));
+                    T value = function.getFunction().apply(i);
+                    originalList.add(value);
+                };
         menuBuilder2.append("Objects will be added manually.");
     }
 
     protected boolean checkInputData(String line) {
         int capacity = Integer.parseInt(line);
-        if (capacity != 0)  {
+        if (capacity != 0) {
             fill(capacity);
             return false;
-        }
-        else System.out.println("ERROR. Capacity != 0. Try again.");
+        } else System.out.println("ERROR. Capacity != 0. Try again.");
         return true;
     }
 

@@ -25,7 +25,7 @@ public class FillCollection<T> extends CommandImpl {
         mapCommands.put(3, fillerManual::enterCapacity);
         builderMenu.append(3).append(" - Manual.\n");
 
-        mapCommands.put(4, ()-> {
+        mapCommands.put(4, () -> {
             System.out.println("Exit filling. Return to select action...");
             isExecute = false;
         });

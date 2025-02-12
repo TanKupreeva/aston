@@ -8,6 +8,6 @@ import java.util.List;
 
 public class FillerRandomBook extends FillerRandom<Book> {
     public FillerRandomBook(BufferedReader bufferedReader, List<Book> list) {
-        super(bufferedReader, list,  ReadFilesUtils.getBooksFromFile());
+        super(bufferedReader, list, ReadFilesUtils.getBooksFromFile());
     }
 }

@@ -25,7 +25,7 @@ public class SelectAction<T> extends CommandImpl {
         mapCommands.put(1, filler);
         builderMenu.append(1).append(" - Fill collections.\n");
 
-        mapCommands.put(2, ()-> {
+        mapCommands.put(2, () -> {
             if (list.isEmpty()) System.out.print("ERROR. The list is empty\n" +
                     "First fill in the sheet, and then perform the search.\n");
             else finder.find();
@@ -38,7 +38,7 @@ public class SelectAction<T> extends CommandImpl {
         mapCommands.put(4, () -> list.sort(comparator.getComparator()));
         builderMenu.append(4).append(" - Sort collection items by all filed.\n");
 
-        mapCommands.put(5, ()-> {
+        mapCommands.put(5, () -> {
             System.out.println("Exit action selection. Return to main menu...");
             isExecute = false;
         });

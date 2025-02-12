@@ -2,7 +2,7 @@ package org.example.utils;
 
 import java.util.*;
 
-public final class MyArrayList <E> extends AbstractList<E> implements List<E> {
+public final class MyArrayList<E> extends AbstractList<E> implements List<E> {
 
     private static final int DEFAULT_CAPACITY = 10;
 

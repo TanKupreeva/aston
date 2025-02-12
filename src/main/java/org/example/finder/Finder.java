@@ -19,7 +19,7 @@ public class Finder<T> {
 
     public Finder(BufferedReader bufferedReader,
                   List<T> originalList,
-                  GetValue<T>  function,
+                  GetValue<T> function,
                   Comparator<T> comparator) {
         this.bufferedReader = bufferedReader;
         this.originalList = originalList;
@@ -39,9 +39,10 @@ public class Finder<T> {
                     "Element found!\n" +
                     "Element=" + originalList.get(index) + "\n" +
                     "***************************************************************************************\n");
-        } else System.out.print("***************************************************************************************\n" +
-                "Element not found! Try again...\n"+
-                "***************************************************************************************\n");
+        } else
+            System.out.print("***************************************************************************************\n" +
+                    "Element not found! Try again...\n" +
+                    "***************************************************************************************\n");
     }
 
 }

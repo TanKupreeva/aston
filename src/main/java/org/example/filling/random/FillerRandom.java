@@ -26,11 +26,10 @@ public class FillerRandom<T> extends Filler<T> {
 
     protected boolean checkInputData(String line) {
         int capacity = Integer.parseInt(line);
-        if (capacity != 0)  {
+        if (capacity != 0) {
             fill(capacity);
             return false;
-        }
-        else System.out.println("ERROR. Capacity != 0. Try again.");
+        } else System.out.println("ERROR. Capacity != 0. Try again.");
         return true;
     }
 

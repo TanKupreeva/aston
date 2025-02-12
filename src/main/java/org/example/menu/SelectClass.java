@@ -38,12 +38,13 @@ public class SelectClass extends CommandImpl {
 
         mapCommands.put(4, () -> {
             System.out.println("\nExit the program. Bye bye...");
-            isExecute = false;});
+            isExecute = false;
+        });
         builderMenu.append(4).append(" - Exit the program.\n");
     }
 
-    public static void start(){
-        try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));) {
+    public static void start() {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));) {
             CommandImpl mainCommand = new SelectClass(bufferedReader);
             mainCommand.execute();
         } catch (IOException e) {
