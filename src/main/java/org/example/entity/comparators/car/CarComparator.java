@@ -5,8 +5,8 @@ import org.example.entity.comparators.AllComparator;
 
 public class CarComparator extends AllComparator<Car> {
     public CarComparator() {
-        super(new CarModelComparator()
-                .thenComparing(new CarPowerComparator())
+        super(new CarPowerComparator()
+                .thenComparing(new CarModelComparator())
                 .thenComparing(new CarYearComparator()));
     }
 }
