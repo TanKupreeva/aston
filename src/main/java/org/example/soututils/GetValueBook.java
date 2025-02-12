@@ -1,4 +1,4 @@
-package org.example.utils.soututils;
+package org.example.soututils;
 
 import org.example.entity.Book;
 

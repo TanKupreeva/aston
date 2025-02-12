@@ -1,6 +1,6 @@
 package org.example.finder;
 
-import org.example.utils.soututils.GetValue;
+import org.example.soututils.GetValue;
 import org.example.utils.BinarySearch;
 
 import java.io.BufferedReader;

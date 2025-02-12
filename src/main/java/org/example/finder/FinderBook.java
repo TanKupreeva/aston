@@ -1,7 +1,7 @@
 package org.example.finder;
 
 import org.example.entity.Book;
-import org.example.utils.soututils.GetValueBook;
+import org.example.soututils.GetValueBook;
 
 import java.io.BufferedReader;
 import java.util.Comparator;

@@ -1,7 +1,7 @@
 package org.example.filling.manual;
 
 import org.example.filling.Filler;
-import org.example.utils.soututils.GetValue;
+import org.example.soututils.GetValue;
 
 import java.io.BufferedReader;
 import java.util.List;

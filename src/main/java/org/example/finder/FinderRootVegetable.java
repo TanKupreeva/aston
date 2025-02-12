@@ -1,7 +1,7 @@
 package org.example.finder;
 
 import org.example.entity.RootVegetable;
-import org.example.utils.soututils.GetValueRootVegetable;
+import org.example.soututils.GetValueRootVegetable;
 
 import java.io.BufferedReader;
 import java.util.Comparator;

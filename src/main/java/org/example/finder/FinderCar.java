@@ -1,7 +1,7 @@
 package org.example.finder;
 
 import org.example.entity.Car;
-import org.example.utils.soututils.GetValueCar;
+import org.example.soututils.GetValueCar;
 
 import java.io.BufferedReader;
 import java.util.Comparator;
