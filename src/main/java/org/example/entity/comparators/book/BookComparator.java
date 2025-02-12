@@ -6,7 +6,7 @@ import org.example.entity.comparators.AllComparator;
 public class BookComparator extends AllComparator<Book> {
     public BookComparator() {
         super(new BookAuthorComparator()
-                .thenComparing(new BookPagesComparator())
-                .thenComparing(new BookTitleComparator()));
+                .thenComparing(new BookTitleComparator())
+                .thenComparing(new BookPagesComparator()));
     }
 }

@@ -5,8 +5,8 @@ import org.example.entity.comparators.AllComparator;
 
 public class RootVegetableComparator extends AllComparator<RootVegetable> {
     public RootVegetableComparator() {
-        super(new RootVegetableColorComparator()
-                .thenComparing(new RootVegetableTypeComparator())
+        super(new RootVegetableTypeComparator()
+                .thenComparing(new RootVegetableColorComparator())
                 .thenComparing(new RootVegetableWeightComparator()));
     }
 }
