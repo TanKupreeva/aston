@@ -36,9 +36,7 @@ public class SelectClass extends CommandImpl {
         mapCommands.put(3, rootVegetableSelectAction);
         builderMenu.append(3).append(" - RootVegetable.\n");
 
-        mapCommands.put(4, () -> {
-            System.out.println("\nExit the program. Bye bye...");
-            isExecute = false;});
+        mapCommands.put(4, () -> isExecute = false);
         builderMenu.append(4).append(" - Exit the program.\n");
     }
 

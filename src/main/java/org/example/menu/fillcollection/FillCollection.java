@@ -9,12 +9,15 @@ import java.io.BufferedReader;
 
 public class FillCollection<T> extends CommandImpl {
 
+    protected final String nameCollection;
+
     public FillCollection(BufferedReader bufferedReader, Class<T> tClass,
                           FillerFromFile<T> fillerFromFile,
                           FillerRandom<T> fillerRandom,
                           FillerManual<T> fillerManual) {
         super(bufferedReader);
-        builderMenu.append("\nPlease select the fill type for ").append(tClass.getSimpleName()).append(" or exit:\n");
+        this.nameCollection = tClass.getSimpleName();
+        builderMenu.append("\nPlease select the fill type for ").append(nameCollection).append(" or exit:\n");
 
         mapCommands.put(1, fillerFromFile::enterCapacity);
         builderMenu.append(1).append(" - From file.\n");
@@ -26,7 +29,7 @@ public class FillCollection<T> extends CommandImpl {
         builderMenu.append(3).append(" - Manual.\n");
 
         mapCommands.put(4, ()-> {
-            System.out.println("Exit filling. Return to select action...");
+            System.out.print("Exit filling. Return to select action...\n");
             isExecute = false;
         });
         builderMenu.append(4).append(" - Exit filling selection.\n");

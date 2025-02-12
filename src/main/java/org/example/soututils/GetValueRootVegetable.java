@@ -28,7 +28,7 @@ public class GetValueRootVegetable extends GetValue<RootVegetable>{
                 is = false;
             } catch (NumberFormatException ex) {
                 System.out.print("This field only accepts numbers.\n\n" +
-                        (i != -1 ? "Try filling object number " + i + " again." : "Try again"));
+                        (i != -1 ? "Try filling object number " + i + " again." : "Try again."));
             }
             catch (IOException e) {
                 e.printStackTrace();

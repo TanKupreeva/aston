@@ -15,7 +15,7 @@ public class CommandImpl implements Command{
 
     protected final StringBuilder builderMenu = new StringBuilder();
 
-    public CommandImpl(final BufferedReader bufferedReader) {
+    public CommandImpl(BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;
     }
 
