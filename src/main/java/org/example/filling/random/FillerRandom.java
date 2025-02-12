@@ -9,7 +9,9 @@ public class FillerRandom<T> extends Filler<T> {
 
     protected final List<T> listRandom;
 
-    public FillerRandom(BufferedReader bufferedReader, List<T> originalList, List<T> listRandom) {
+    public FillerRandom(BufferedReader bufferedReader,
+                        List<T> originalList,
+                        List<T> listRandom) {
         super(bufferedReader, originalList, null);
         this.listRandom = listRandom;
         this.intConsumer = (i) -> {
@@ -24,13 +26,14 @@ public class FillerRandom<T> extends Filler<T> {
 
     }
 
+    @Override
     protected boolean checkInputData(String line) {
-        int capacity = Integer.parseInt(line);
-        if (capacity != 0)  {
-            fill(capacity);
+        int quantity = Integer.parseInt(line);
+        if (quantity > 0)  {
+            fill(quantity);
             return false;
         }
-        else System.out.println("ERROR. Capacity != 0. Try again.");
+        else System.out.println("ERROR. The quantity should not be equal to " + line + ". Try again.");
         return true;
     }
 

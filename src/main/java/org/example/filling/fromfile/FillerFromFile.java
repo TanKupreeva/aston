@@ -9,27 +9,31 @@ public class FillerFromFile<T> extends Filler<T> {
 
     protected final List<T> listFromFile;
 
-    public FillerFromFile(BufferedReader bufferedReader, List<T> originalList, List<T> listFromFile) {
+    public FillerFromFile(BufferedReader bufferedReader,
+                          List<T> originalList,
+                          List<T> listFromFile) {
         super(bufferedReader, originalList, null);
         this.listFromFile = listFromFile;
         this.intConsumer = (i) -> originalList.add(listFromFile.get(i));
         menuBuilder2.append("Objects will be added from the file.\n")
-                .append("Or enter \"all\" to add all data from the file.");
+                .append("Or enter \"all\" to add all data from the file.\n")
+                .append("The maximum quantity that can be entered is ").append(listFromFile.size()-1).append(".");
     }
 
+    @Override
     public boolean checkInputData(String line) {
         if (line.equalsIgnoreCase("all")) {
             fill(listFromFile.size());
             return false;
         } else {
-            int capacity = Integer.parseInt(line);
-            if (capacity != 0)  {
-                if (capacity < listFromFile.size()) {
-                    fill(capacity);
+            int quantity = Integer.parseInt(line);
+            if (quantity > 0)  {
+                if (quantity < listFromFile.size()) {
+                    fill(quantity);
                     return false;
-                } else System.out.println("ERROR. Capacity exceeds the limit. Try again.");
+                } else System.out.println("ERROR. Capacity exceeds the limit. Max=" + (listFromFile.size()-1) + ". Try again.");
             }
-            else System.out.println("ERROR. Capacity != 0. Try again.");
+            else System.out.println("ERROR. The quantity should not be equal to " + line + ". Try again.");
         }
         return true;
     }

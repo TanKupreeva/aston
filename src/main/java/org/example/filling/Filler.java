@@ -15,7 +15,7 @@ public abstract class Filler<T>{
     protected final List<T> originalList;
 
     protected final StringBuilder menuBuilder2 = new StringBuilder()
-            .append("\nEnter the number of objects.\n")
+            .append("\nEnter the quantity of items.\n")
             .append("Or enter \"exit\" for exit.\n");
 
     public Filler(BufferedReader bufferedReader, List<T> originalList, IntConsumer intConsumer) {

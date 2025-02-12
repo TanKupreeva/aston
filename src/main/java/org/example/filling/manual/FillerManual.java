@@ -18,16 +18,19 @@ public class FillerManual<T> extends Filler<T> {
             T value = function.getFunction().apply(i);
             originalList.add(value);
         };
-        menuBuilder2.append("Objects will be added manually.");
+        menuBuilder2
+                .append("Objects will be added manually.\n")
+                .append("You can only create 2 objects at a time.");
     }
 
+    @Override
     protected boolean checkInputData(String line) {
-        int capacity = Integer.parseInt(line);
-        if (capacity != 0)  {
-            fill(capacity);
+        int quantity = Integer.parseInt(line);
+        if (quantity > 0 && quantity <= 2)  {
+            fill(quantity);
             return false;
         }
-        else System.out.println("ERROR. Capacity != 0. Try again.");
+        else System.out.println("ERROR. The quantity should not be equal to " + line + ". Try again.");
         return true;
     }
 
