@@ -9,13 +9,31 @@ import java.util.List;
 
 public class ReadFilesUtils {
 
+    private static final String BASE_PATH = "src/main/resources";
+    private static final String READ_PATH = BASE_PATH + "/read";
+    private static final String WRITE_PATH = BASE_PATH + "/write/";
+    private static final String FILE_OUTPUT_NAME = WRITE_PATH + "output.txt";
+    public static File fileWrite;
+
     private static final List<Book> booksFromFile = new MyArrayList<>();
     private static final List<Car> carsFromFile = new MyArrayList<>();
     private static final List<RootVegetable> rootVegetablesFromFile = new MyArrayList<>();
 
     static {
-        File dir = new File("src/main/resources/examples"); //path указывает на директорию
-        File[] arrFiles = dir.listFiles();
+        try {
+            fileWrite = new File(FILE_OUTPUT_NAME);
+            if (fileWrite.createNewFile()) {
+                System.out.println("The file for recording has been created.");
+            } else {
+                System.out.println("The file to write already exists");
+            }
+        } catch (IOException e) {
+            System.out.println("Error creating file.");
+            e.printStackTrace();
+        }
+
+        File dirRead = new File(READ_PATH);
+        File[] arrFiles = dirRead.listFiles();
 
         for (File file : arrFiles) {
             switch (file.getName().toLowerCase().replaceAll("_examples.txt", "")) {

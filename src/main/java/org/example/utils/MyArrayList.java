@@ -59,6 +59,27 @@ public final class MyArrayList <T> extends AbstractList<T> implements List<T> {
     }
 
     @Override
+    public T remove(int index) {
+        Objects.checkIndex(index, size);
+        final Object[] es = elementData;
+
+        T oldValue = (T) es[index];
+        fastRemove(es, index);
+
+        return oldValue;
+    }
+
+    private void fastRemove(Object[] es, int i) {
+        modCount++;
+        final int newSize;
+        if ((newSize = size - 1) > i)
+            System.arraycopy(es, i + 1, es, i, newSize - i);
+        es[size = newSize] = null;
+    }
+
+
+
+    @Override
     public boolean add(T t) {
         modCount++;
         add(t, elementData, size);

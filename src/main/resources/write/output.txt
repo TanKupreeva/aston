@@ -1,0 +1,50 @@
+Car{power=471, model='Ferrari F40', year=1987}
+Car{power=717, model='Dodge Challenger Hellcat', year=2019}
+Car{power=707, model='Dodge Charger SRT Hellcat', year=2015}
+Car{power=707, model='Dodge Charger SRT Hellcat', year=2015}
+Car{power=707, model='Dodge Charger SRT Hellcat', year=2015}
+Car{power=707, model='Dodge Charger SRT Hellcat', year=2015}
+Car{power=1001, model='Bugatti Veyron 16.4', year=2005}
+Car{power=215, model='Mercedes-Benz 300SL Gullwing', year=1954}
+Car{power=197, model='Audi Quattro', year=1980}
+Car{power=197, model='Audi Quattro', year=1980}
+Car{power=197, model='Audi Quattro', year=1980}
+Car{power=197, model='Audi Quattro', year=1980}
+Car{power=627, model='McLaren F1', year=1992}
+Car{power=627, model='McLaren F1', year=1992}
+Car{power=455, model='Chevrolet Camaro SS', year=2016}
+Car{power=455, model='Chevrolet Camaro SS', year=2016}
+Car{power=455, model='Chevrolet Camaro SS', year=2016}
+Car{power=621, model='Audi RS6 Avant', year=2024}
+Car{power=621, model='Audi RS6 Avant', year=2024}
+Car{power=621, model='Audi RS6 Avant', year=2024}
+Car{power=621, model='Audi RS6 Avant', year=2024}
+Car{power=621, model='Audi RS6 Avant', year=2024}
+Car{power=280, model='Nissan Skyline GT-R R34', year=1999}
+Car{power=280, model='Nissan Skyline GT-R R34', year=1999}
+Car{power=280, model='Nissan Skyline GT-R R34', year=1999}
+Car{power=282, model='Aston Martin DB5', year=1964}
+Car{power=282, model='Aston Martin DB5', year=1964}
+Car{power=288, model='Tesla Roadster', year=2008}
+Car{power=290, model='Honda NSX', year=1991}
+Car{power=320, model='Toyota Supra MK4', year=1998}
+Car{power=320, model='Toyota Supra MK4', year=1998}
+Car{power=320, model='Toyota Supra MK4', year=1998}
+Car{power=320, model='Toyota Supra MK4', year=1998}
+Car{power=450, model='Porsche 911 Carrera S', year=2019}
+Car{power=450, model='Porsche 911 Carrera S', year=2019}
+Car{power=450, model='Porsche 911 Carrera S', year=2019}
+Car{power=450, model='Porsche 911 Carrera S', year=2019}
+Car{power=450, model='Ford Mustang', year=2022}
+Car{power=492, model='Lamborghini Diablo', year=1995}
+Car{power=492, model='Lamborghini Diablo', year=1995}
+Car{power=492, model='Lamborghini Diablo', year=1995}
+Car{power=640, model='Porsche 911 Turbo S', year=2021}
+Car{power=650, model='Chevrolet Camaro ZL1', year=2020}
+Car{power=710, model='Ferrari 488 Pista', year=2018}
+Car{power=710, model='Ferrari 488 Pista', year=2018}
+Car{power=1020, model='Tesla Model S Plaid', year=2021}
+Car{power=1020, model='Tesla Model S Plaid', year=2021}
+Car{power=1020, model='Tesla Model S Plaid', year=2021}
+Car{power=1160, model='Koenigsegg Agera RS', year=2015}
+Car{power=1160, model='Koenigsegg Agera RS', year=2015}
