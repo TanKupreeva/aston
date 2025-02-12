@@ -2,71 +2,69 @@ package org.example.utils;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.stream.IntStream;
 
-public final class MergeSort <T>{
+public class MergeSort <T>{
 
-    private final List<T> list;
+    private final List<T> originalList;
 
-    public MergeSort(List<T> list) {
-        this.list = list;
+    public MergeSort(List<T> originalList) {
+        this.originalList = originalList;
     }
 
     public void sort(Comparator<? super T> comparator) {
-        Object[] dest = list.toArray();
-        Object[] src = dest.clone();
-        mergeSort(src, dest, 0, dest.length, 0, comparator);
-
-        ListIterator<T> i = list.listIterator();
-        for (Object e : dest) {
-            i.next();
-            i.set((T) e);
-        }
+        sorting(originalList, comparator);
     }
 
-    private static void mergeSort(Object[] src,
-                                  Object[] dest,
-                                  int low, int high, int off,
-                                  Comparator comparator) {
-        int length = high - low;
 
-        // Insertion sort on smallest arrays
-        if (length < 7) {
-            for (int i=low; i<high; i++)
-                for (int j=i; j>low && comparator.compare(dest[j-1], dest[j])>0; j--)
-                    swap(dest, j, j-1);
+    private void sorting(List<T> original, Comparator<? super T> comparator) {
+        if (original.size() <= 1) {
             return;
         }
-
-        // Recursively sort halves of dest into src
-        int destLow  = low;
-        int destHigh = high;
-        low  += off;
-        high += off;
-        int mid = (low + high) >>> 1;
-        mergeSort(dest, src, low, mid, -off, comparator);
-        mergeSort(dest, src, mid, high, -off, comparator);
-
-        // If list is already sorted, just copy from src to dest.  This is an
-        // optimization that results in faster sorts for nearly ordered lists.
-        if (comparator.compare(src[mid-1], src[mid]) <= 0) {
-            System.arraycopy(src, low, dest, destLow, length);
-            return;
+        int center = original.size() / 2;
+        List<T> left = new MyArrayList<>(center);
+        List<T> right = new MyArrayList<>(original.size() - center);
+        for (int i = 0; i < center; i++) {
+            left.add(original.get(i));
         }
-
-        // Merge sorted halves (now in src) into dest
-        for(int i = destLow, p = low, q = mid; i < destHigh; i++) {
-            if (q >= high || p < mid && comparator.compare(src[p], src[q]) <= 0)
-                dest[i] = src[p++];
-            else
-                dest[i] = src[q++];
+        for (int i = center; i < original.size(); i++) {
+            right.add(original.get(i));
         }
+//        IntStream.range(0, center).forEach(i -> left.add(original.get(i)));
+//        IntStream.range(center, original.size()).forEach(i -> right.add(original.get(i)));
+
+        sorting(left, comparator);
+        sorting(right, comparator);
+        merge(left, right, original, comparator);
     }
 
-    private static void swap(Object[] x, int a, int b) {
-        Object t = x[a];
-        x[a] = x[b];
-        x[b] = t;
+    private void merge(List<T> left, List<T> right, List<T> original, Comparator<? super T> comparator) {
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int originalIndex = 0;
+
+        while(leftIndex < left.size() && rightIndex < right.size()) {
+
+            if (comparator.compare(left.get(leftIndex), right.get(rightIndex)) <= 0 ) {
+                original.set(originalIndex, left.get(leftIndex));
+                leftIndex++;
+            } else {
+                original.set(originalIndex, right.get(rightIndex));
+                rightIndex++;
+            }
+            originalIndex++;
+        }
+
+        while(leftIndex < left.size()) {
+            original.set(originalIndex, left.get(leftIndex));
+            originalIndex++;
+            leftIndex++;
+        }
+        while(rightIndex < right.size()) {
+            original.set(originalIndex, right.get(rightIndex));
+            originalIndex++;
+            rightIndex++;
+        }
     }
 
 }

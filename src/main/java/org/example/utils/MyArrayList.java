@@ -2,19 +2,33 @@ package org.example.utils;
 
 import java.util.*;
 
-public final class MyArrayList <E> extends AbstractList<E> implements List<E> {
+public final class MyArrayList <T> extends AbstractList<T> implements List<T> {
 
     private static final int DEFAULT_CAPACITY = 10;
-
+    private static final Object[] EMPTY_ELEMENTDATA = {};
     private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
-
     Object[] elementData;
-
     private int size;
+
+    private final MergeSort<T> mergeSort = new MergeSort<>(this);
+    public static final int SOFT_MAX_ARRAY_LENGTH = Integer.MAX_VALUE - 8;
+
 
     public MyArrayList() {
         this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
     }
+
+    public MyArrayList(int initialCapacity) {
+        if (initialCapacity > 0) {
+            this.elementData = new Object[initialCapacity];
+        } else if (initialCapacity == 0) {
+            this.elementData = EMPTY_ELEMENTDATA;
+        } else {
+            throw new IllegalArgumentException("Illegal Capacity: "+
+                    initialCapacity);
+        }
+    }
+
 
     @Override
     public int size() {
@@ -22,47 +36,38 @@ public final class MyArrayList <E> extends AbstractList<E> implements List<E> {
     }
 
     @Override
-    public Object[] toArray() {
-        return Arrays.copyOf(elementData, size);
-    }
-
-    @Override
-    public E get(int index) {
+    public T get(int index) {
         Objects.checkIndex(index, size);
         return elementData(index);
     }
 
-
-    private E elementData(int index) {
-        return (E) elementData[index];
-    }
-
-    private final MergeSort<E> mergeSort = new MergeSort<>(this);
-
-    @Override
-    public void sort(Comparator<? super E> c) {
-        mergeSort.sort(c);
+    private T elementData(int index) {
+        return (T) elementData[index];
     }
 
     @Override
-    public E set(int index, E element) {
+    public T set(int index, T element) {
         Objects.checkIndex(index, size);
-        E oldValue = elementData(index);
+        T oldValue = elementData(index);
         elementData[index] = element;
         return oldValue;
     }
 
     @Override
-    public boolean add(E e) {
+    public void sort(Comparator<? super T> c) {
+        mergeSort.sort(c);
+    }
+
+    @Override
+    public boolean add(T t) {
         modCount++;
-        add(e, elementData, size);
+        add(t, elementData, size);
         return true;
     }
 
-    private void add(E e, Object[] elementData, int s) {
-        if (s == elementData.length)
-            elementData = grow();
-        elementData[s] = e;
+    private void add(T t, Object[] elementData, int s) {
+        if (s == elementData.length) elementData = grow();
+        elementData[s] = t;
         size = s + 1;
     }
 
@@ -82,19 +87,11 @@ public final class MyArrayList <E> extends AbstractList<E> implements List<E> {
         }
     }
 
-
-    public static final int SOFT_MAX_ARRAY_LENGTH = Integer.MAX_VALUE - 8;
-
     private static int newLength(int oldLength, int minGrowth, int prefGrowth) {
-        // preconditions not checked because of inlining
-        // assert oldLength >= 0
-        // assert minGrowth > 0
-
         int prefLength = oldLength + Math.max(minGrowth, prefGrowth); // might overflow
         if (0 < prefLength && prefLength <= (SOFT_MAX_ARRAY_LENGTH)) {
             return prefLength;
         } else {
-            // put code cold in a separate method
             return hugeLength(oldLength, minGrowth);
         }
     }
