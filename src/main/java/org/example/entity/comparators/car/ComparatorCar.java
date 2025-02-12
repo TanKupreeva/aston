@@ -7,6 +7,7 @@ import org.example.entity.comparators.car.defaultt.DefaultComparatorCar;
 
 public class ComparatorCar extends AllComparator<Car> {
     public ComparatorCar() {
-        super(new DefaultComparatorCar().getComparator(), new Additional1ComparatorCar().getComparator());
+        super(new DefaultComparatorCar().getComparator(), new
+                Additional1ComparatorCar().getComparator());
     }
 }

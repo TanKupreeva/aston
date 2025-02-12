@@ -1,8 +1,9 @@
 package org.example.menu.selectaction;
 
 import org.example.entity.Car;
-import org.example.entity.comparators.car.CarComparator;
+import org.example.entity.comparators.car.ComparatorCar;
 import org.example.finder.FinderCar;
+import org.example.menu.SelectSort;
 import org.example.menu.fillcollection.FillCollectionCar;
 
 import java.io.BufferedReader;
@@ -14,7 +15,7 @@ public class SelectActionCar extends SelectAction<Car> {
                 Car.class,
                 list,
                 new FillCollectionCar(bufferedReader, list),
-                new FinderCar(bufferedReader, list, new CarComparator().getComparator()),
-                new CarComparator());
+                new FinderCar(bufferedReader, list, new ComparatorCar().getComparatorDefault()),
+                new SelectSort<>(bufferedReader, Car.class, list, new ComparatorCar()));
     }
 }

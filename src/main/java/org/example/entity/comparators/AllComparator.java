@@ -8,7 +8,8 @@ public class AllComparator<T> {
 
     private final Comparator<T> comparatorAdditional;
 
-    public AllComparator(Comparator<T> comparatorDefault, Comparator<T> comparatorAdditional) {
+    public AllComparator(Comparator<T> comparatorDefault,
+                         Comparator<T> comparatorAdditional) {
         this.comparatorDefault = comparatorDefault;
         this.comparatorAdditional = comparatorAdditional;
     }

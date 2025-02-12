@@ -4,6 +4,7 @@ import org.example.entity.comparators.AllComparator;
 import org.example.finder.Finder;
 import org.example.menu.Command;
 import org.example.menu.CommandImpl;
+import org.example.menu.SelectSort;
 import org.example.menu.fillcollection.FillCollection;
 
 import java.io.BufferedReader;
@@ -18,7 +19,7 @@ public class SelectAction<T> extends CommandImpl {
 
     Consumer<Command> isError = (i) -> {
         if (list.isEmpty())
-            System.out.print("ERROR. THE LIST is EMPTY\n" +
+            System.out.print("ERROR. THE LIST IS EMPTY\n" +
                     "First fill out the list, then search.\n");
         else i.execute();
     };
@@ -28,7 +29,7 @@ public class SelectAction<T> extends CommandImpl {
                         List<T> list,
                         FillCollection<T> filler,
                         Finder<T> finder,
-                        AllComparator<T> comparator) {
+                        SelectSort<T> sort) {
         super(bufferedReader);
         this.list = list;
         this.nameCollection = tClass.getSimpleName();
@@ -48,12 +49,7 @@ public class SelectAction<T> extends CommandImpl {
         }));
         builderMenu.append(3).append(" - Display collection items.\n");
 
-        mapCommands.put(4, () -> isError.accept(() -> {
-            list.sort(comparator.getComparator());
-            System.out.print("***************************************************************************************\n" +
-                    "The " + nameCollection + " Collection is sorted!\n" +
-                    "***************************************************************************************\n");
-        }));
+        mapCommands.put(4, () -> isError.accept(sort::execute));
         builderMenu.append(4).append(" - Sort collection items by all filed.\n");
 
         mapCommands.put(5, ()-> {

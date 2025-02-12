@@ -1,8 +1,9 @@
 package org.example.menu.selectaction;
 
 import org.example.entity.RootVegetable;
-import org.example.entity.comparators.rootvegetable.RootVegetableComparator;
+import org.example.entity.comparators.rootvegetable.ComparatorRootVegetable;
 import org.example.finder.FinderRootVegetable;
+import org.example.menu.SelectSort;
 import org.example.menu.fillcollection.FillRootVegetable;
 
 import java.io.BufferedReader;
@@ -14,7 +15,7 @@ public class SelectActionRootVegetable extends SelectAction<RootVegetable> {
                 RootVegetable.class,
                 list,
                 new FillRootVegetable(bufferedReader, list),
-                new FinderRootVegetable(bufferedReader, list, new RootVegetableComparator().getComparator()),
-                new RootVegetableComparator());
+                new FinderRootVegetable(bufferedReader, list, new ComparatorRootVegetable().getComparatorDefault()),
+                new SelectSort<>(bufferedReader, RootVegetable.class, list, new ComparatorRootVegetable()));
     }
 }

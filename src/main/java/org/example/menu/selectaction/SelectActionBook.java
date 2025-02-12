@@ -1,8 +1,10 @@
 package org.example.menu.selectaction;
 
 import org.example.entity.Book;
-import org.example.entity.comparators.book.BookComparator;
+import org.example.entity.comparators.book.ComparatorBook;
+import org.example.entity.comparators.book.defaultt.DefaultComparatorBook;
 import org.example.finder.FinderBook;
+import org.example.menu.SelectSort;
 import org.example.menu.fillcollection.FillCollectionBook;
 
 import java.io.BufferedReader;
@@ -14,7 +16,7 @@ public class SelectActionBook extends SelectAction<Book> {
                 Book.class,
                 list,
                 new FillCollectionBook(bufferedReader, list),
-                new FinderBook(bufferedReader, list, new BookComparator().getComparator()),
-                new BookComparator());
+                new FinderBook(bufferedReader, list, new DefaultComparatorBook().getComparator()),
+                new SelectSort<>(bufferedReader, Book.class, list, new ComparatorBook()));
     }
 }
