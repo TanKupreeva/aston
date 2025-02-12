@@ -16,8 +16,7 @@ public class FillerFromFile<T> extends Filler<T> {
         this.listFromFile = listFromFile;
         this.intConsumer = (i) -> originalList.add(listFromFile.get(i));
         menuBuilder2.append("Objects will be added from the file.\n")
-                .append("Or enter \"all\" to add all data from the file.\n")
-                .append("The maximum quantity that can be entered is ").append(listFromFile.size()-1).append(".");
+                .append("Or enter \"all\" to add all data from the file.");
     }
 
     @Override

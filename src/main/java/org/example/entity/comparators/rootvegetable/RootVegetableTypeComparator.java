@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class RootVegetableTypeComparator implements Comparator<RootVegetable> {
     @Override
-    public int compare (RootVegetable o1, RootVegetable o2){
+    public int compare(RootVegetable o1, RootVegetable o2) {
         return o1.getType().compareToIgnoreCase(o2.getType());
     }
 }

@@ -63,8 +63,6 @@ public class Car {
             return new Car(this.power, this.model, this.year);
         }
 
-        public String toString() {
-            return "Car.CarBuilder(power=" + this.power + ", model=" + this.model + ", year=" + this.year + ")";
-        }
+
     }
 }

@@ -63,9 +63,7 @@ public class RootVegetable {
             return new RootVegetable(this.type, this.weight, this.color);
         }
 
-        public String toString() {
-            return "RootVegetable.RootVegetableBuilder(type=" + this.type + ", weight=" + this.weight + ", color=" + this.color + ")";
-        }
+
     }
 
 }

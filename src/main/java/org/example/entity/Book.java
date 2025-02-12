@@ -1,6 +1,6 @@
 package org.example.entity;
 
-public class Book{
+public class Book {
     private final String author;
     private final String title;
     private final int pages;
@@ -63,8 +63,6 @@ public class Book{
             return new Book(this.author, this.title, this.pages);
         }
 
-        public String toString() {
-            return "Book.BookBuilder(author=" + this.author + ", title=" + this.title + ", pages=" + this.pages + ")";
-        }
+
     }
 }

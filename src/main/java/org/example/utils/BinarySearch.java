@@ -5,7 +5,8 @@ import java.util.List;
 
 public final class BinarySearch {
 
-    private BinarySearch() {}
+    private BinarySearch() {
+    }
 
     public static <T> int search(List<T> list, T key, Comparator<T> comparator) {
         int left = 0;

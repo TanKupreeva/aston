@@ -41,7 +41,7 @@ public class SelectClass extends CommandImpl {
     }
 
     public static void start(){
-        try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));) {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));) {
             CommandImpl mainCommand = new SelectClass(bufferedReader);
             mainCommand.execute();
         } catch (IOException e) {

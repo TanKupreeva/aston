@@ -8,6 +8,6 @@ import java.util.List;
 
 public class FillerFromFileBook extends FillerFromFile<Book> {
     public FillerFromFileBook(BufferedReader bufferedReader, List<Book> list) {
-        super(bufferedReader, list ,ReadFilesUtils.getBooksFromFile());
+        super(bufferedReader, list, ReadFilesUtils.getBooksFromFile());
     }
 }

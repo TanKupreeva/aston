@@ -19,12 +19,15 @@ public class ReadFilesUtils {
 
         for (File file : arrFiles) {
             switch (file.getName().toLowerCase().replaceAll("_examples.txt", "")) {
-                case "book": setBooksFromFile(file);
-                break;
-                case "car": setCarsFromFile(file);
-                break;
-                case "rootvegetable": setRootVegetablesFromFile(file);
-                break;
+                case "book":
+                    setBooksFromFile(file);
+                    break;
+                case "car":
+                    setCarsFromFile(file);
+                    break;
+                case "rootvegetable":
+                    setRootVegetablesFromFile(file);
+                    break;
                 default: {
                     System.out.println("ERROR: Check name files");
                     System.exit(0);
@@ -36,7 +39,7 @@ public class ReadFilesUtils {
 
     private static List<String[]> setObjectsFromFile(File file) {
         List<String[]> fileContent = new MyArrayList<>();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));){
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));) {
             while (bufferedReader.ready()) {
                 String line = bufferedReader.readLine();
                 String[] arr = line.split("; ");
@@ -54,8 +57,8 @@ public class ReadFilesUtils {
         }
         return fileContent;
     }
-    
-    
+
+
     private static void setBooksFromFile(File file) {
         List<String[]> fileContent = setObjectsFromFile(file);
         for (String[] s : fileContent) {

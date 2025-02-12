@@ -8,7 +8,7 @@ import org.example.menu.fillcollection.FillCollectionBook;
 import java.io.BufferedReader;
 import java.util.List;
 
-public class SelectActionBook extends SelectAction<Book>{
+public class SelectActionBook extends SelectAction<Book> {
     public SelectActionBook(BufferedReader bufferedReader, List<Book> list) {
         super(bufferedReader,
                 Book.class,

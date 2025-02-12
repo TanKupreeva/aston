@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandImpl implements Command{
+public class CommandImpl implements Command {
 
     protected boolean isExecute = true;
 
@@ -36,8 +36,7 @@ public class CommandImpl implements Command{
 
             } catch (NumberFormatException ex) {
                 System.out.print("This handler only accepts numbers. Try again.\n");
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

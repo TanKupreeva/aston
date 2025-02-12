@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.function.IntConsumer;
 import java.util.stream.IntStream;
 
-public abstract class Filler<T>{
+public abstract class Filler<T> {
 
     protected IntConsumer intConsumer;
 
@@ -41,8 +41,7 @@ public abstract class Filler<T>{
 
             } catch (NumberFormatException ex) {
                 System.out.print("ERROR. This handler only accepts numbers. Try again.\n");
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

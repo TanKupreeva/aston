@@ -29,8 +29,7 @@ public class GetValueBook extends GetValue<Book>{
             } catch (NumberFormatException ex) {
                 System.out.print("This field only accepts numbers.\n\n" +
                         (i != -1 ? "Try filling object number " + i + " again." : "Try again."));
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
