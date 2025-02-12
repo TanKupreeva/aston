@@ -3,14 +3,22 @@ package org.example.entity.comparators;
 import java.util.Comparator;
 
 public class AllComparator<T> {
-    private final Comparator<T> comparator;
 
-    public AllComparator(Comparator<T> comparator) {
-        this.comparator = comparator;
+    private final Comparator<T> comparatorDefault;
+
+    private final Comparator<T> comparatorAdditional;
+
+    public AllComparator(Comparator<T> comparatorDefault, Comparator<T> comparatorAdditional) {
+        this.comparatorDefault = comparatorDefault;
+        this.comparatorAdditional = comparatorAdditional;
     }
 
-    public final Comparator<T> getComparator() {
-        return comparator;
+    public final Comparator<T> getComparatorDefault() {
+        return comparatorDefault;
+    }
+
+    public final Comparator<T> getComparatorAdditional() {
+        return comparatorAdditional;
     }
 
     public static int isBothOrSwitch(boolean isEven1, boolean isEven2, int other) {
