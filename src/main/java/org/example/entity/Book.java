@@ -63,8 +63,6 @@ public class Book {
             return new Book(this.author, this.title, this.pages);
         }
 
-        public String toString() {
-            return "Book.BookBuilder(author=" + this.author + ", title=" + this.title + ", pages=" + this.pages + ")";
-        }
+
     }
 }
