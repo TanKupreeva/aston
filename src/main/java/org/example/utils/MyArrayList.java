@@ -1,34 +1,27 @@
 package org.example.utils;
 
-import java.util.*;
+import java.util.AbstractList;
+import java.util.Comparator;
+import java.util.Objects;
 
-public final class MyArrayList <T> extends AbstractList<T> implements List<T> {
+public class MyArrayList<T> extends AbstractList<T> {
 
     private static final int DEFAULT_CAPACITY = 10;
-    private static final Object[] EMPTY_ELEMENTDATA = {};
-    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
-    Object[] elementData;
-    private int size;
 
     private final MergeSort<T> mergeSort = new MergeSort<>(this);
-    public static final int SOFT_MAX_ARRAY_LENGTH = Integer.MAX_VALUE - 8;
 
+    Object[] elementData;
+
+    private int size = 0;
 
     public MyArrayList() {
-        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+        elementData = new Object[DEFAULT_CAPACITY];
     }
 
     public MyArrayList(int initialCapacity) {
-        if (initialCapacity > 0) {
-            this.elementData = new Object[initialCapacity];
-        } else if (initialCapacity == 0) {
-            this.elementData = EMPTY_ELEMENTDATA;
-        } else {
-            throw new IllegalArgumentException("Illegal Capacity: "+
-                    initialCapacity);
-        }
+        Objects.checkIndex(initialCapacity, (long) Integer.MAX_VALUE+1);
+        elementData = new Object[initialCapacity];
     }
-
 
     @Override
     public int size() {
@@ -38,17 +31,13 @@ public final class MyArrayList <T> extends AbstractList<T> implements List<T> {
     @Override
     public T get(int index) {
         Objects.checkIndex(index, size);
-        return elementData(index);
-    }
-
-    private T elementData(int index) {
         return (T) elementData[index];
     }
 
     @Override
     public T set(int index, T element) {
         Objects.checkIndex(index, size);
-        T oldValue = elementData(index);
+        T oldValue = (T) elementData[index];
         elementData[index] = element;
         return oldValue;
     }
@@ -61,68 +50,43 @@ public final class MyArrayList <T> extends AbstractList<T> implements List<T> {
     @Override
     public T remove(int index) {
         Objects.checkIndex(index, size);
-        final Object[] es = elementData;
 
-        T oldValue = (T) es[index];
-        fastRemove(es, index);
+        T oldValue = (T) elementData[index];
+        int newSize= size - 1;
+        if (newSize > index) System.arraycopy(elementData, index + 1, elementData, index, newSize - index);
+        size = newSize;
+        elementData[size] = null;
 
         return oldValue;
     }
 
-    private void fastRemove(Object[] es, int i) {
-        modCount++;
-        final int newSize;
-        if ((newSize = size - 1) > i)
-            System.arraycopy(es, i + 1, es, i, newSize - i);
-        es[size = newSize] = null;
-    }
-
-
-
     @Override
     public boolean add(T t) {
-        modCount++;
-        add(t, elementData, size);
+        if (size < elementData.length) {
+            elementData[size++] = t;
+            return true;
+        } else return grow(t);
+    }
+
+    private boolean grow(T t) {
+        if (size < DEFAULT_CAPACITY) {
+            return grow(t, DEFAULT_CAPACITY);
+        } else if ((elementData.length * 2)  < Integer.MAX_VALUE) {
+            return grow(t, elementData.length * 2 );
+        } else if (size < Integer.MAX_VALUE) {
+            return grow(t, Integer.MAX_VALUE );
+        } else {
+            System.out.println("ERROR: size < Integer.MAX_VALUE");
+            return false;
+        }
+    }
+
+    private boolean grow(T t, int capacity) {
+        Object[] newElementData = new Object[capacity];
+        System.arraycopy(elementData, 0, newElementData, 0, elementData.length);
+        elementData = newElementData;
+        elementData[size++] = t;
         return true;
-    }
-
-    private void add(T t, Object[] elementData, int s) {
-        if (s == elementData.length) elementData = grow();
-        elementData[s] = t;
-        size = s + 1;
-    }
-
-    private Object[] grow() {
-        return grow(size + 1);
-    }
-
-    private Object[] grow(int minCapacity) {
-        int oldCapacity = elementData.length;
-        if (oldCapacity > 0 || elementData != DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
-            int newCapacity = newLength(oldCapacity,
-                    minCapacity - oldCapacity, /* minimum growth */
-                    oldCapacity >> 1           /* preferred growth */);
-            return elementData = Arrays.copyOf(elementData, newCapacity);
-        } else {
-            return elementData = new Object[Math.max(DEFAULT_CAPACITY, minCapacity)];
-        }
-    }
-
-    private static int newLength(int oldLength, int minGrowth, int prefGrowth) {
-        int prefLength = oldLength + Math.max(minGrowth, prefGrowth); // might overflow
-        if (0 < prefLength && prefLength <= (SOFT_MAX_ARRAY_LENGTH)) {
-            return prefLength;
-        } else {
-            return hugeLength(oldLength, minGrowth);
-        }
-    }
-
-    private static int hugeLength(int oldLength, int minGrowth) {
-        int minLength = oldLength + minGrowth;
-        if (minLength < 0) { // overflow
-            throw new OutOfMemoryError(
-                    "Required array length " + oldLength + " + " + minGrowth + " is too large");
-        } else return Math.max(minLength, SOFT_MAX_ARRAY_LENGTH);
     }
 
 }
