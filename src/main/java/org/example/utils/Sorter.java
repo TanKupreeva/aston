@@ -2,20 +2,19 @@ package org.example.utils;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.IntStream;
+import java.util.function.Predicate;
 
-public class MergeSort <T>{
+public class Sorter<T>{
 
     private final List<T> originalList;
 
-    public MergeSort(List<T> originalList) {
+    public Sorter(List<T> originalList) {
         this.originalList = originalList;
     }
 
-    public void sort(Comparator<? super T> comparator) {
+    public void mergeSort(Comparator<? super T> comparator) {
         sorting(originalList, comparator);
     }
-
 
     private void sorting(List<T> original, Comparator<? super T> comparator) {
         if (original.size() <= 1) {
@@ -64,6 +63,38 @@ public class MergeSort <T>{
             original.set(originalIndex, right.get(rightIndex));
             originalIndex++;
             rightIndex++;
+        }
+    }
+
+
+    public void additionalSort(Comparator<? super T> comparator, Predicate<T> predicate) {
+        sortingHelper(originalList, comparator, predicate);
+    }
+
+    private void sortingHelper(List<T> original, Comparator<? super T> comparator, Predicate<T> predicate) {
+        if (original.size() <= 1) {
+            return;
+        }
+
+        //save the positions of odd elements
+        List<Integer> oddIndices = new MyArrayList<>();
+        List<T> evenElements = new MyArrayList<>();
+
+        for (int i = 0; i < original.size(); i++) {
+            //original.get(i).getValue() % 2 == 0
+            if ( predicate.test(original.get(i)) ) evenElements.add(original.get(i));
+            else oddIndices.add(i);
+        }
+
+        // sort only even elements
+        sorting(evenElements, comparator);
+
+        // insert even elements
+        int evenIndex = 0;
+        for (int i = 0; i < original.size(); i++) {
+            if (!oddIndices.contains(i)) {
+                original.set(i, evenElements.get(evenIndex++));
+            }
         }
     }
 

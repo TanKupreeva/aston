@@ -16,6 +16,6 @@ public class SelectActionCar extends SelectAction<Car> {
                 list,
                 new FillCollectionCar(bufferedReader, list),
                 new FinderCar(bufferedReader, list, new ComparatorCar().getComparatorDefault()),
-                new SelectSort<>(bufferedReader, Car.class, list, new ComparatorCar()));
+                new SelectSort<>(bufferedReader, list, Car.class, new ComparatorCar(), (i) -> (i.getPower() % 2 == 0)));
     }
 }

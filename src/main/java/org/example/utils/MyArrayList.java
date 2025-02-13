@@ -8,7 +8,7 @@ public class MyArrayList<T> extends AbstractList<T> {
 
     private static final int DEFAULT_CAPACITY = 10;
 
-    private final MergeSort<T> mergeSort = new MergeSort<>(this);
+    private final Sorter<T> sorter = new Sorter<>(this);
 
     Object[] elementData;
 
@@ -44,7 +44,7 @@ public class MyArrayList<T> extends AbstractList<T> {
 
     @Override
     public void sort(Comparator<? super T> c) {
-        mergeSort.sort(c);
+        sorter.mergeSort(c);
     }
 
     @Override

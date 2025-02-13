@@ -9,8 +9,8 @@ public class Additional1ComparatorCar {
     private final Comparator<Car> comparator;
 
     public Additional1ComparatorCar() {
-        comparator = new Additional1ComparatorCarPower()
-                .thenComparing(new Additional1ComparatorCarYear());
+        comparator = new Additional1ComparatorCarPower();
+//                .thenComparing(new Additional1ComparatorCarYear());
     }
 
     public Comparator<Car> getComparator() {

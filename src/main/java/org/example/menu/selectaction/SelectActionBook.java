@@ -17,6 +17,6 @@ public class SelectActionBook extends SelectAction<Book> {
                 list,
                 new FillCollectionBook(bufferedReader, list),
                 new FinderBook(bufferedReader, list, new DefaultComparatorBook().getComparator()),
-                new SelectSort<>(bufferedReader, Book.class, list, new ComparatorBook()));
+                new SelectSort<>(bufferedReader, list, Book.class, new ComparatorBook(), (i) -> (i.getPages() % 2 == 0)));
     }
 }

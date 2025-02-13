@@ -16,6 +16,6 @@ public class SelectActionRootVegetable extends SelectAction<RootVegetable> {
                 list,
                 new FillRootVegetable(bufferedReader, list),
                 new FinderRootVegetable(bufferedReader, list, new ComparatorRootVegetable().getComparatorDefault()),
-                new SelectSort<>(bufferedReader, RootVegetable.class, list, new ComparatorRootVegetable()));
+                new SelectSort<>(bufferedReader, list, RootVegetable.class, new ComparatorRootVegetable(), (i) -> i.getWeight() % 2 == 0));
     }
 }
