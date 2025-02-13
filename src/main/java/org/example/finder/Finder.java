@@ -47,6 +47,7 @@ public class Finder<T> {
             System.out.print("***************************************************************************************\n" +
                     "Element found!\n" +
                     "Element=" + originalList.get(index) + "\n" +
+                    "Index=" + index + "\n" +
                     "***************************************************************************************\n");
             elementsForSave.add(originalList.get(index));
             saveElements.execute();
