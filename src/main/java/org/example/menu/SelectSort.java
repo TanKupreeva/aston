@@ -58,10 +58,10 @@ public class SelectSort<T> extends CommandImpl {
 //        });
 //        builderMenu.append(3).append(" - Additional sorting. Simple option.\n");
 
-        mapCommands.put(4, ()-> {
+        mapCommands.put(3, ()-> {
             System.out.print("Exit sort selection. Return to select action...\n");
             isExecute = false;
         });
-        builderMenu.append(4).append(" - Exit action selection.\n");
+        builderMenu.append(3).append(" - Exit action selection.\n");
     }
 }

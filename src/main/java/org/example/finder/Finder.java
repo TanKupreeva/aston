@@ -51,7 +51,7 @@ public class Finder<T> {
                     "***************************************************************************************\n");
             elementsForSave.add(originalList.get(index));
             saveElements.execute();
-            elementsForSave.remove(index);
+            elementsForSave.remove(0);
         } else
             System.out.print("***************************************************************************************\n" +
                     "Element not found! Try again...\n" +
