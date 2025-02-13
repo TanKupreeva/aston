@@ -18,8 +18,8 @@ public class SelectSort<T> extends CommandImpl {
     }
 
     private final StringBuilder sorted = new StringBuilder()
-            .append("***************************************************************************************\n" + "The ")
-            .append(getNameCollection()).append(" Collection is sorted!")
+            .append("***************************************************************************************\n")
+            .append("The ").append(getNameCollection()).append(" Collection is sorted!\n")
             .append("***************************************************************************************\n");
 
     public SelectSort(BufferedReader bufferedReader,
@@ -42,7 +42,7 @@ public class SelectSort<T> extends CommandImpl {
             System.out.print(sorted);
             saveElements.execute();
                 });
-        System.out.print(sorted);
+        builderMenu.append(1).append(" - Default sorting.\n");
 
         mapCommands.put(2, () -> {
             sorter.additionalSort(comparator.getComparatorAdditional(), predicate);

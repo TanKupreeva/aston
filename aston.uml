@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>D:/0_PROJECTS/test_project/aston</OriginalElement>
+  <nodes>
+    <node x="-2647.4846359603325" y="-500.98486430062644">org.example.menu.fillcollection.FillCollectionBook</node>
+    <node x="-1903.8914405010426" y="212.75730688935334">org.example.filling.fromfile.FillerFromFileRootVegetable</node>
+    <node x="-3284.438413361168" y="212.75730688935334">org.example.filling.random.FillerRandomCar</node>
+    <node x="965.2849686847599" y="-431.5775052192065">org.example.entity.comparators.rootvegetable.ComparatorRootVegetable</node>
+    <node x="159.31210855949905" y="-184.46816283924943">org.example.entity.comparators.car.defaultt.DefaultComparatorCarYear</node>
+    <node x="-483.18893528183696" y="-349.2077244258875">org.example.entity.comparators.book.defaultt.DefaultComparatorBook</node>
+    <node x="484.3517745302713" y="-192.16179540709797">org.example.entity.comparators.car.additional.Additional1ComparatorCarYear</node>
+    <node x="-2458.4825482776605" y="-706.7886221294365">org.example.menu.fillcollection.FillCollection</node>
+    <node x="-229.3204592901875" y="-989.9618997912313">org.example.utils.ReadFilesUtilsTest</node>
+    <node x="-2596.6931106471807" y="142.18841336116964">org.example.filling.manual.FillerManualRootVegetable</node>
+    <node x="322.58246346555336" y="-989.9618997912313">org.example.utils.MyArrayList</node>
+    <node x="-2246.4530271398735" y="-27.86638830897664">org.example.filling.fromfile.FillerFromFile</node>
+    <node x="-2072.5587486951977" y="-553.124739039666">org.example.menu.selectaction.SelectActionRootVegetable</node>
+    <node x="354.58246346555325" y="-827.9055323590811">org.example.entity.Car</node>
+    <node x="-2895.453842640917" y="-27.86638830897664">org.example.filling.manual.FillerManual</node>
+    <node x="-2454.4825482776605" y="-553.124739039666">org.example.menu.fillcollection.FillCollectionCar</node>
+    <node x="534.8319415448849" y="-1027.6122129436326">org.example.utils.Sorter</node>
+    <node x="153.31210855949905" y="-827.9055323590809">org.example.entity.Book</node>
+    <node x="-483.18893528183696" y="-266.83794363256845">org.example.entity.comparators.book.defaultt.DefaultComparatorBookPages</node>
+    <node x="-483.18893528183696" y="-192.16179540709797">org.example.entity.comparators.book.defaultt.DefaultComparatorBookTitle</node>
+    <node x="316.08246346555325" y="-437.21424843423785">org.example.entity.comparators.car.ComparatorCar</node>
+    <node x="478.3517745302713" y="-349.2077244258875">org.example.entity.comparators.car.additional.Additional1ComparatorCar</node>
+    <node x="800.2202505219205" y="-349.2077244258875">org.example.entity.comparators.rootvegetable.defaultt.DefaultComparatorRootVegetable</node>
+    <node x="800.2202505219205" y="-102.0983820459304">org.example.entity.comparators.rootvegetable.defaultt.DefaultComparatorRootVegetableColor</node>
+    <node x="-1040.1965357515653" y="11.670015657620127">org.example.soututils.GetValue</node>
+    <node x="-1205.041003392484" y="-706.7886221294365">org.example.menu.SaveElements</node>
+    <node x="-2106.8188935281823" y="212.75730688935334">org.example.filling.fromfile.FillerFromFileCar</node>
+    <node x="-2871.953842640917" y="-267.647181628392">org.example.filling.Filler</node>
+    <node x="-1842.5524856471811" y="-500.98486430062644">org.example.menu.selectaction.SelectActionCar</node>
+    <node x="-860.3379762526092" y="169.96959812108577">org.example.soututils.GetValueRootVegetable</node>
+    <node x="-3430.416231732776" y="-27.86638830897664">org.example.filling.random.FillerRandom</node>
+    <node x="159.31210855949905" y="-349.2077244258875">org.example.entity.comparators.car.defaultt.DefaultComparatorCar</node>
+    <node x="800.2202505219205" y="-266.83794363256845">org.example.entity.comparators.rootvegetable.defaultt.DefaultComparatorRootVegetableType</node>
+    <node x="-1177.541003392484" y="-361.4206680584549">org.example.finder.FinderCar</node>
+    <node x="-1617.6349491127348" y="-553.124739039666">org.example.menu.selectaction.SelectActionBook</node>
+    <node x="-229.3204592901875" y="-1047.641962421711">org.example.utils.ReadFilesUtils</node>
+    <node x="-2811.14121216075" y="142.18841336116964">org.example.filling.manual.FillerManualBook</node>
+    <node x="-843.3379762526092" y="-361.4206680584549">org.example.finder.FinderRootVegetable</node>
+    <node x="-277.1054279749477" y="-437.21424843423785">org.example.entity.comparators.book.ComparatorBook</node>
+    <node x="528.3319415448849" y="-945.4817327766182">org.example.utils.BinarySearch</node>
+    <node x="-3033.8308977035485" y="142.18841336116964">org.example.filling.manual.FillerManualCar</node>
+    <node x="-1827.0524856471811" y="-976.1623173277663">org.example.menu.Command</node>
+    <node x="1200.994780793319" y="-272.8298538622127">org.example.entity.comparators.rootvegetable.additional.Additional1ComparatorRootVegetableWeight</node>
+    <node x="304.58246346555325" y="-702.2479123173275">org.example.entity.comparators.AllComparator</node>
+    <node x="-161.89457202505218" y="-349.2077244258875">org.example.entity.comparators.book.additional.Additional1ComparatorBook</node>
+    <node x="1200.994780793319" y="-349.2077244258875">org.example.entity.comparators.rootvegetable.additional.Additional1ComparatorRootVegetable</node>
+    <node x="-2310.1774530271387" y="212.75730688935334">org.example.filling.fromfile.FillerFromFileBook</node>
+    <node x="-1023.5305649791226" y="-361.4206680584549">org.example.finder.FinderBook</node>
+    <node x="-1846.0524856471811" y="-657.4671189979125">org.example.menu.selectaction.SelectAction</node>
+    <node x="543.8528183716074" y="-827.9055323590811">org.example.entity.RootVegetable</node>
+    <node x="-483.18893528183696" y="-114.5">org.example.entity.comparators.book.defaultt.DefaultComparatorBookAuthor</node>
+    <node x="-161.89457202505218" y="-266.83794363256845">org.example.entity.comparators.book.additional.Additional1ComparatorBookPages</node>
+    <node x="800.2202505219205" y="-192.161795407098">org.example.entity.comparators.rootvegetable.defaultt.DefaultComparatorRootVegetableWeight</node>
+    <node x="478.3517745302713" y="-266.83794363256845">org.example.entity.comparators.car.additional.Additional1ComparatorCarPower</node>
+    <node x="-1036.6965357515653" y="169.96959812108577">org.example.soututils.GetValueCar</node>
+    <node x="-3525.774791231732" y="212.75730688935334">org.example.filling.random.FillerRandomBook</node>
+    <node x="-635.1550104384127" y="-1220.1059498956158">org.example.App</node>
+    <node x="-2282.1109407620033" y="-500.98486430062644">org.example.menu.fillcollection.FillRootVegetable</node>
+    <node x="153.31210855949905" y="-266.83794363256845">org.example.entity.comparators.car.defaultt.DefaultComparatorCarPower</node>
+    <node x="-1527.5321307411268" y="-706.7886221294365">org.example.menu.SelectSort</node>
+    <node x="-3790.4311064718154" y="212.75730688935334">org.example.filling.random.FillerRandomRootVegetable</node>
+    <node x="-1371.0284772964503" y="-657.4671189979125">org.example.menu.SelectClass</node>
+    <node x="-1211.3943436847594" y="169.96959812108577">org.example.soututils.GetValueBook</node>
+    <node x="-1021.5305649791226" y="-519.7202505219205">org.example.finder.Finder</node>
+    <node x="-1841.0524856471811" y="-899.6905010438416">org.example.menu.CommandImpl</node>
+    <node x="159.31210855949905" y="-114.5">org.example.entity.comparators.car.defaultt.DefaultComparatorCarModel</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.example.menu.fillcollection.FillRootVegetable" target="org.example.menu.fillcollection.FillCollection" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2201.1109407620033" y="-617.0850730688936" />
+      <point x="-2379.4825482776605" y="-617.0850730688936" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.fromfile.FillerFromFileBook" target="org.example.filling.fromfile.FillerFromFile" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2227.1774530271387" y="97.20250521920718" />
+      <point x="-2165.4530271398735" y="97.20250521920718" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.manual.FillerManual" target="org.example.filling.Filler" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.manual.FillerManualRootVegetable" target="org.example.filling.manual.FillerManual" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2486.6931106471807" y="56.79801670146185" />
+      <point x="-2818.453842640917" y="56.79801670146185" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.selectaction.SelectAction" target="org.example.menu.CommandImpl" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.SelectClass" target="org.example.menu.CommandImpl" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1311.5284772964503" y="-742.9671189979125" />
+      <point x="-1768.0524856471811" y="-742.9671189979125" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.fromfile.FillerFromFileCar" target="org.example.filling.fromfile.FillerFromFile" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2029.8188935281823" y="97.20250521920718" />
+      <point x="-2165.4530271398735" y="97.20250521920718" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.entity.comparators.car.ComparatorCar" target="org.example.entity.comparators.AllComparator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.manual.FillerManualBook" target="org.example.filling.manual.FillerManual" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2732.14121216075" y="56.79801670146185" />
+      <point x="-2818.453842640917" y="56.79801670146185" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.SaveElements" target="org.example.menu.CommandImpl" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1122.541003392484" y="-742.9671189979125" />
+      <point x="-1768.0524856471811" y="-742.9671189979125" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.random.FillerRandomBook" target="org.example.filling.random.FillerRandom" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-3442.774791231732" y="79.69728601252666" />
+      <point x="-3349.416231732776" y="79.69728601252666" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.CommandImpl" target="org.example.menu.Command" relationship="REALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.random.FillerRandomCar" target="org.example.filling.random.FillerRandom" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-3207.438413361168" y="79.69728601252666" />
+      <point x="-3349.416231732776" y="79.69728601252666" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.finder.FinderRootVegetable" target="org.example.finder.Finder" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-751.3379762526092" y="-399.60855949895597" />
+      <point x="-962.5305649791226" y="-399.60855949895597" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.soututils.GetValueCar" target="org.example.soututils.GetValue" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.selectaction.SelectActionBook" target="org.example.menu.selectaction.SelectAction" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1537.1349491127348" y="-576.6205636743216" />
+      <point x="-1768.0524856471811" y="-576.6205636743216" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.random.FillerRandomRootVegetable" target="org.example.filling.random.FillerRandom" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-3676.4311064718154" y="79.69728601252666" />
+      <point x="-3349.416231732776" y="79.69728601252666" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.fillcollection.FillCollectionBook" target="org.example.menu.fillcollection.FillCollection" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2566.4846359603325" y="-617.0850730688936" />
+      <point x="-2379.4825482776605" y="-617.0850730688936" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.selectaction.SelectActionCar" target="org.example.menu.selectaction.SelectAction" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1768.0524856471811" y="-485.1069937369522" />
+      <point x="-1768.0524856471811" y="-485.1069937369522" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.manual.FillerManualCar" target="org.example.filling.manual.FillerManual" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2960.8308977035485" y="56.79801670146185" />
+      <point x="-2818.453842640917" y="56.79801670146185" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.finder.FinderCar" target="org.example.finder.Finder" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1122.541003392484" y="-399.60855949895597" />
+      <point x="-962.5305649791226" y="-399.60855949895597" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.fillcollection.FillCollectionCar" target="org.example.menu.fillcollection.FillCollection" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.finder.FinderBook" target="org.example.finder.Finder" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.entity.comparators.book.ComparatorBook" target="org.example.entity.comparators.AllComparator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-190.3825678496872" y="-437.21424843423785" />
+      <point x="-190.3825678496872" y="-598.8413361169103" />
+      <point x="390.08246346555325" y="-598.8413361169103" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.selectaction.SelectActionRootVegetable" target="org.example.menu.selectaction.SelectAction" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1961.0587486951977" y="-576.6205636743216" />
+      <point x="-1768.0524856471811" y="-576.6205636743216" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.entity.comparators.rootvegetable.ComparatorRootVegetable" target="org.example.entity.comparators.AllComparator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="1076.2849686847599" y="-598.8413361169103" />
+      <point x="390.08246346555325" y="-598.8413361169103" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.SelectSort" target="org.example.menu.CommandImpl" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1456.5321307411268" y="-742.9671189979125" />
+      <point x="-1768.0524856471811" y="-742.9671189979125" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.random.FillerRandom" target="org.example.filling.Filler" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-3349.416231732776" y="-137.40344467640864" />
+      <point x="-2818.453842640917" y="-137.40344467640864" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.soututils.GetValueRootVegetable" target="org.example.soututils.GetValue" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-759.8379762526092" y="102.08442066805861" />
+      <point x="-973.1965357515653" y="102.08442066805861" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.soututils.GetValueBook" target="org.example.soututils.GetValue" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1141.8943436847594" y="102.08442066805861" />
+      <point x="-973.1965357515653" y="102.08442066805861" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.menu.fillcollection.FillCollection" target="org.example.menu.CommandImpl" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2379.4825482776605" y="-742.9671189979125" />
+      <point x="-1768.0524856471811" y="-742.9671189979125" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.fromfile.FillerFromFile" target="org.example.filling.Filler" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-2165.4530271398735" y="-136.36221294363241" />
+      <point x="-2726.9921711899783" y="-136.36221294363241" />
+      <point x="-2726.9921711899783" y="-137.40344467640864" />
+      <point x="-2818.453842640917" y="-137.40344467640864" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="org.example.filling.fromfile.FillerFromFileRootVegetable" target="org.example.filling.fromfile.FillerFromFile" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="-1789.8914405010426" y="97.20250521920718" />
+      <point x="-2165.4530271398735" y="97.20250521920718" />
+      <point x="0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.7096296296296299" showDependencies="false" x="-1634.3820459290193" y="-633.0000000000003" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
